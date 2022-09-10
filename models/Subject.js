@@ -12,9 +12,12 @@ const subjectSchema = new mongoose.Schema( {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Term",
     },
-    assignments: {
-
-    }
+    assignments: [
+        { 
+            assignment: {type: String, required: true},
+            grade: {type: Number, required: true}
+        }
+    ]
 })
 
 module.exports = mongoose.model("HomeschoolDash", subjectSchema, "subjects")
