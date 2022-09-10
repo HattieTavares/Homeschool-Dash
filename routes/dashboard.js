@@ -7,7 +7,13 @@ const dashboardController = require("../controllers/dashboard")
 const { ensureAuth } = require("../middleware/auth")
 
 //add specific routes for specific tasks
+
 router.get("/", ensureAuth, dashboardController.getDashboard)
+
+router.get("/profile", ensureAuth, dashboardController.getProfile)
+
+router.get("/term", ensureAuth, dashboardController.getTerm)
+
 //router.post("/", dashboardController.addLesson)
 
 
