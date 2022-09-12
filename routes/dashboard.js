@@ -10,11 +10,11 @@ const { ensureAuth } = require("../middleware/auth")
 
 router.get("/", ensureAuth, dashboardController.getDashboard)
 
+router.get("/dashboard", ensureAuth, dashboardController.getDashboard)
+
 router.get("/profile", ensureAuth, dashboardController.getProfile)
 
-router.get("/term", ensureAuth, dashboardController.getTerm)
-
-//router.post("/", dashboardController.addLesson)
+router.get("/child", ensureAuth, dashboardController.getChild)
 
 
 module.exports = router

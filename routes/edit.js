@@ -3,27 +3,28 @@ const router = express.Router()
 const editController = require("../controllers/edit")
 const { ensureAuth } = require("../middleware/auth")
 
-// Routes for profile
+//Routes for terms
 
-// router.get("/:id", ensureAuth, editController.editProfile)
-// router.post("/:id", editController.updateProfile)
+router.get("/:id", ensureAuth, editController.editTerm)
+//router.get("/term/remove/:id", editController.deleteTerm)
+//router.post("/term/:id", editController.updateTerm)
 
-// Routes for terms
+//Routes for subject
 
-// router.get("/:id", ensureAuth, editController.editTerm)
-// router.get("/remove/:id", editController.deleteTerm)
-// router.post("/:id", editController.updateTerm)
-
-// Routes for subject
-
-// router.get("/:id", ensureAuth, editController.editSubject)
-// router.get("/remove/:id", editController.deleteSubject)
-// router.post("/:id", editController.updateSubject)
+router.get("/:id", ensureAuth, editController.editSubject)
+//router.get("/subject/remove/:id", editController.deleteSubject)
+//router.post("/subject/:id", editController.updateSubject)
 
 //Routes for child
 
-// router.get("/:id", ensureAuth, editController.editChild)
-// router.get("/remove/:id", editController.deleteChild)
-// router.post("/:id", editController.updateChild)
+router.get("/:id", ensureAuth, editController.editChild)
+//router.get("/child/remove/:id", editController.deleteChild)
+//router.post("/child/:id", editController.updateChild)
+
+//Routes for assignment
+
+router.get("/:id", ensureAuth, editController.editAssignment)
+//router.get("/assignment/remove/:id", editController.deleteAssignment)
+//router.post("/assignment/:id", editController.updateAssignment)
 
 module.exports = router

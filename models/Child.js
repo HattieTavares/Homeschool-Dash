@@ -18,4 +18,4 @@ const childSchema = new mongoose.Schema( {
     }
 })
 
-module.exports = mongoose.model("HomeschoolDash", childSchema, "children")
+module.exports = mongoose.model("Child", childSchema, "children")

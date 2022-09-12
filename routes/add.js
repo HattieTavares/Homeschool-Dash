@@ -5,15 +5,15 @@ const { ensureAuth } = require("../middleware/auth")
 
 // Routes for add child
 
-// router.post("/", addController.addChild)
+router.post("/addchild", addController.addChild)
 
 // Routes for add term
 
-// router.post("/", addController.addTerm)
+router.post("/addterm", addController.addTerm)
 
 // Routes for add assignment
 
-// router.post("/", addController.addAssignment)
+router.post("/addassignment", addController.addAssignment)
 
 
 module.exports = router

@@ -1,15 +1,16 @@
 const mongoose = require("mongoose")
+const moment = require("moment")
 const termSchema = new mongoose.Schema( {
     number: {
         type: Number,
         required: true,
     },
     startDate: {
-        type: date,
+        type: Date,
         required: true,
     },
     endDate: {
-        type: date,
+        type: Date,
         required: true,
     },
     userId: {
@@ -20,9 +21,6 @@ const termSchema = new mongoose.Schema( {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Child",
     },
-    subjects: {
-
-    }
 })
 
-module.exports = mongoose.model("HomeschoolDash", termSchema, "terms")
+module.exports = mongoose.model("Term", termSchema, "terms")
