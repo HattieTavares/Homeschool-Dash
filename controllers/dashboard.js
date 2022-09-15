@@ -1,47 +1,60 @@
+const Assignments = require("../models/Grades")
+const moment = require('moment')
 const User = require('../models/User')
-const Child = require("../models/Child")
-const Term = require("../models/Term")
-const Subject = require("../models/Subject")
-const Assignment = require("../models/Assignment")
-const moment = require("moment")
 
 module.exports = {
     getIndex: (req,res)=>{
-        res.render('index.ejs')
+        res.render('index.ejs', {
+            user: req.user,
+            page: "index"
+        })
+    },
+    getAbout: (req,res)=>{
+        res.render('about.ejs', {
+            user: req.user,
+            page: "about"
+        })
+    },
+    getContact: (req,res)=>{
+        res.render('contact.ejs', {
+            user: req.user,
+            page: "contact"
+        })
+    },
+    getResources: (req,res)=>{
+        res.render('resources.ejs', {
+            user: req.user,
+            page: "resources"
+        })
     },
     getDashboard : async (req, res) => {
         try {
-            const children = await Child.find({userId:req.user.id})
-            const terms = await Term.find({userId:req.user.id})
-            const subjects = await Subject.find({userId:req.user.id})
+            const grades = await Assignments.find({userId:req.user.id})
             res.render("dashboard.ejs", {
+                Assignments: grades,
+                moment: moment,
                 user: req.user,
-                Child: children,
-                Term: terms,
-                Subject: subjects,
-                moment: moment
+                page: "dashboard",
             })
         } catch (err) {
             if (err) return res.status(500).send(err.toString())
         }
     },
-    getProfile : async (req, res) => {
+    addAssignment: async (req, res) => {
+        const assignment = new Assignments(
+            {
+                assignment: req.body.assignment,
+                grade: req.body.grade,
+                subject: req.body.subject,
+                userId: req.user.id,
+            }
+        )
         try {
-            const children = await Child.find({userId:req.user.id})
-            res.render("profile.ejs", { 
-                user: req.user,
-                Child: children,
-            });
-          } catch (err) {
-            if (err) return res.status(500).send(err.toString())
-          }
-    },
-    getChild : async (req, res) => {
-        try {
-            const children = await Child.find({ user: req.user.id });
-            res.render("child.ejs", { Child: children, user: req.user });
-          } catch (err) {
-            if (err) return res.status(500).send(err.toString())
-          }
-    },
+            await assignment.save()
+            res.redirect("/dashboard")
+        } catch(err) {
+            if (err) return res.status(500).send(err)
+            res.redirect("/dashboard")
+        }
+    }
 }

@@ -1,3 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
+
+.basics {
+    @apply bg-neutral text-brandBlue font-mainText flex flex-col p-2 min-h-screen;
+}
+
+.header {
+    @apply w-full flex flex-row justify-between font-logoText items-center p-2;
+}
+
+.logo {
+    @apply w-24 h-auto mb-3;
+}
+
+.navLink {
+    @apply hover:underline pr-5 text-lg font-medium;
+}
+
+.blueBanner {
+    @apply bg-brandBlue text-neutral flex h-16 text-2xl justify-center items-center drop-shadow-lg shadow-brandBlue;
+}
+
+.yellowBtn {
+    @apply inline-flex items-center justify-center rounded-lg bg-brandYellow hover:bg-brandGreen hover:text-neutral font-logoText font-bold w-24 h-8 cursor-pointer tracking-wider drop-shadow-md shadow-black;
+}
+
+.logoutBtn {
+    @apply inline-flex items-center justify-center rounded-lg bg-brandYellow hover:bg-brandRed hover:text-neutral font-logoText font-bold w-24 h-8 cursor-pointer tracking-wider drop-shadow-md shadow-black;
+}
+
+.greenBtn {
+    @apply inline-flex items-center justify-center rounded-lg text-neutral bg-brandGreen hover:bg-brandBlue font-logoText font-bold w-24 h-8 cursor-pointer tracking-wider drop-shadow-md shadow-black;
+}
+
+.footer {
+    @apply w-full flex justify-center self-end mt-auto pb-5;
+}
+
+.card {
+    @apply flex flex-row mt-16 pl-20 pr-20;
+}
+
+.cardSection {
+    @apply flex flex-col text-justify w-1/2 h-auto space-y-5 justify-center items-center;
+}
+
+.imgHorizontal {
+    @apply w-4/5 h-auto rounded-md border-2 border-brandBlue;
+}
+
+.inputs {
+    @apply text-brandBlue p-1 focus:outline-none rounded-md;
+}

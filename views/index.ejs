@@ -1,6 +1,26 @@
 <%- include('partials/header.ejs') %>
 
-<a href="/login">Log In</a>
-<a href="/signup">Sign Up</a>
+<section class="blueBanner">
+    <h2>Your Personalized Dashboard For Homeschool Organization</h2>
+</section>
+
+<section class="card">
+
+    <section class="cardSection">
+        <img src="/images/frustrated.jpg" class="imgHorizontal" alt="woman with long blonde hair and black framed glasses sitting at a desk staring at a computer screen and biting a pencil in frustration">
+    </section>
+
+    <section class="cardSection">
+        <p>Back-To-School means something different for Homeschooling Families. Researching curricula, planning lessons, and submitting forms to your local school district can be time consuming and stressful. Then once the school year starts, you have to track attendance, hours spent studying, grades and more.</p>
+
+        <p>Homeschool Dash provides a one stop solution for organizing, planning, tracking and more! Best of all? It's FREE. I believe in Homeschool Dash being a resource that is available to all families.</p>
+
+        <% if(typeof user === 'undefined') { %>
+            <a href="/signup" class="greenBtn">Sign Up</a>
+        <% } %>
+        
+    </section>
+
+</section>
 
 <%- include('partials/footer.ejs') %>

@@ -1,13 +1,25 @@
-<%- include('partials/header.ejs') %>
+<%- include('partials/authHeader.ejs') %>
+
+<% if (locals.messages.errors) { %>
+    <% messages.errors.forEach( el => { %>
+        <div><%= el.msg %></div>
+    <% }) %>    
+<% } %>
+<% if (locals.messages.info) { %>
+    <% messages.info.forEach( el => { %>
+        <div><%= el.msg %></div>
+    <% }) %>    
+<% } %>
+<section class="blueBanner">
+    <h2>Log In:</h2>
+</section>
 
 <form action="/login" method="POST">
-    <h1>Homeschool Dash</h1>
-    <p>Log In:</p>
-    <input type="email" name="email" placeholder="Email">
-    <input type="password" name="password" placeholder="Password">
-    <input type="submit">
+    <input type="email" name="email" placeholder="Email" class="inputs">
+    <input type="password" name="password" placeholder="Password" class="inputs">
+    <input type="submit" class="submitBtn">
 </form>
 
-<p >Don't have an account? <a href="/signup">Sign up</a></p>
+<p class="font-medium">Don't have an account? <a href="/signup" class="underline text-brandRed">Sign Up here</a></p>
 
 <%- include('partials/footer.ejs') %>

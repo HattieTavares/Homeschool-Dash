@@ -1,7 +1,77 @@
 <%- include('partials/header.ejs') %>
+<section class="blueBanner">
+    <h1>Welcome <%= user.userName %></h1>
+</section>
 
-<h1>Welcome <%= user.userName %></h1>
+<h2>Grades</h2>
 
-<a href="/profile">My Profile</a>
+<% let subs = ["Math", "Science", "ELA", "Social Studies", "Gym", "Art", "Music", "Foreign Language", "Technology", "Health", "Home Economics", "Elective"] %>
+
+<ul>
+    <% for(let i = 0; i < subs.length; i++) { %>
+        <% let sub = subs[i] %>
+        <% let total = 0 %>
+        <% let count = 0 %>
+        <% for(let j = 0; j < Assignments.length; j++) { %>
+            <% if(Assignments[j].subject === sub) { %>
+                <% total += Assignments[j].grade %>
+                <% count ++ %>
+            <% } %>
+        <% } %>
+        <% if(count > 0) { %>
+            <li><%= sub %> <%= total/count %></li>
+        <% } %>
+    <% } %>
+</ul>
+
+<p>Generate a pdf of current grades in each subject:</p>
+<button>Generate PDF</button>
+
+<h2>Assignments</h2>
+
+<ul>
+    <% Assignments.forEach(item => { %>
+        <li>
+            <%= item.subject %>
+            <%= item.assignment %>
+            <%= item.grade %>
+        </li>
+    <% }) %>
+</ul>
+
+<h2>Add New Assignment</h2>
+
+<form action="/dashboard" method="POST" >
+
+    <label for="subject">Subject:</label>
+    <select name="subject" id="subject">
+        <option value="starter" selected>Choose a subject:</option>
+        <option>Math</option>
+        <option>Science</option>
+        <option>ELA</option>
+        <option>Social Studies</option>
+        <option>Gym</option>
+        <option>Art</option>
+        <option>Music</option>
+        <option>Foreign Language</option>
+        <option>Technology</option> 
+        <option>Health</option>
+        <option>Home Economics</option>
+        <option>Elective</option>
+    </select>
+    <label for="unit">Unit (optional):</label>
+    <input type="text" name="unit" id="unit" class="inputs">
+
+    <label for="topic">Topic (optional):</label>
+    <input type="text" name="topic" id="topic" class="inputs">
+
+    <label for="assignment">Assignment:</label>
+    <input type="text" name="assignment" id="assignment" class="inputs">
+
+    <label for="grade">Grade:</label>
+    <input type="number" min= "0" name="grade" id="grade" class="inputs">
+    
+    <button type="submit" class="greenBtn">Submit</button>
+</form>
 
 <%- include('partials/footer.ejs') %>

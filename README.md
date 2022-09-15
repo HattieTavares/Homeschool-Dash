@@ -1,15 +1,17 @@
 # Homeschool-Dash
+
 A digital dashboard for parents who homeschool that tracks grades by quarter, with parents fully customizing the subjects that are added. Assignment grades are calculated, averaged, and displayed on the dashboard overview.
 
-**Link to project:** Coming soon
+**Link to project:** Coming soon!
+
+![Screenshot of Homeschool Dash Index Page](hdhomepage.png)
 
 ## How It's Made:
 
 **Tech used:** HTML, CSS, TailwindCSS, EJS, JavaScript, Node.js, Express, MongoDB, and Passport for Authentication
 
-
-
 ## Optimizations
+
 Stretch Goals:
 - Attendance Tracking
 - Weighted grading (depending on market research)
