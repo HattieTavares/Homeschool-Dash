@@ -13,7 +13,7 @@
 }
 
 .basics {
-    @apply bg-neutral text-brandBlue font-mainText flex flex-col p-2 min-h-screen;
+    @apply bg-neutral text-brandBlue font-mainText flex flex-col p-2 h-screen;
 }
 
 .header {
@@ -29,7 +29,7 @@
 }
 
 .blueBanner {
-    @apply bg-brandBlue text-neutral flex h-16 text-2xl justify-center items-center drop-shadow-lg shadow-brandBlue;
+    @apply bg-brandBlue text-neutral flex h-16 text-2xl font-logoText justify-center items-center drop-shadow-lg shadow-brandBlue;
 }
 
 .yellowBtn {
@@ -62,4 +62,16 @@
 
 .inputs {
     @apply text-brandBlue p-1 focus:outline-none rounded-md;
+}
+
+.preAuth {
+    @apply flex flex-col justify-center items-center;
+}
+
+.preAuthCard {
+    @apply flex flex-col space-y-3 justify-center items-center p-10 mt-10 bg-brandBlue text-neutral rounded-lg drop-shadow-xl;
+}
+
+.form {
+    @apply flex flex-col space-y-5 items-center;
 }

@@ -1,25 +1,31 @@
 <%- include('partials/authHeader.ejs') %>
 
-<% if (locals.messages.errors) { %>
-    <% messages.errors.forEach( el => { %>
-        <div><%= el.msg %></div>
-    <% }) %>    
-<% } %>
-<% if (locals.messages.info) { %>
-    <% messages.info.forEach( el => { %>
-        <div><%= el.msg %></div>
-    <% }) %>    
-<% } %>
+
 <section class="blueBanner">
     <h2>Log In:</h2>
 </section>
 
-<form action="/login" method="POST">
-    <input type="email" name="email" placeholder="Email" class="inputs">
-    <input type="password" name="password" placeholder="Password" class="inputs">
-    <input type="submit" class="submitBtn">
-</form>
+<section class="preAuth">
+    <section class="preAuthCard">
+        <form action="/login" class="form" method="POST">
+            <input type="email" name="email" placeholder="Email" class="inputs">
+            <input type="password" name="password" placeholder="Password" class="inputs">
+            <input type="submit" class="greenBtn">
+        </form>
+        
+        <p class="font-medium">Don't have an account? <a href="/signup" class="underline text-brandRed">Sign Up here</a></p>
+    </section>
 
-<p class="font-medium">Don't have an account? <a href="/signup" class="underline text-brandRed">Sign Up here</a></p>
+    <% if (locals.messages.errors) { %>
+        <% messages.errors.forEach( el => { %>
+            <div><%= el.msg %></div>
+        <% }) %>    
+    <% } %>
+    <% if (locals.messages.info) { %>
+        <% messages.info.forEach( el => { %>
+            <div><%= el.msg %></div>
+        <% }) %>    
+    <% } %>
+</section>
 
 <%- include('partials/footer.ejs') %>

@@ -557,10 +557,6 @@ video {
   display: flex;
 }
 
-.w-auto{
-  width: auto;
-}
-
 .items-center{
   align-items: center;
 }
@@ -596,7 +592,7 @@ input[type="number"]::-webkit-inner-spin-button,
 
 .basics{
   display: flex;
-  min-height: 100vh;
+  height: 100vh;
   flex-direction: column;
   --tw-bg-opacity: 1;
   background-color: rgb(224 224 224 / var(--tw-bg-opacity));
@@ -641,6 +637,7 @@ input[type="number"]::-webkit-inner-spin-button,
   justify-content: center;
   --tw-bg-opacity: 1;
   background-color: rgb(43 58 103 / var(--tw-bg-opacity));
+  font-family: Montserrat, sans-serif;
   font-size: 1.5rem;
   line-height: 2rem;
   --tw-text-opacity: 1;
@@ -784,4 +781,48 @@ input[type="number"]::-webkit-inner-spin-button,
 .inputs:focus{
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+
+.preAuth{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.preAuthCard{
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.preAuthCard > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
+}
+
+.preAuthCard{
+  border-radius: 0.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(43 58 103 / var(--tw-bg-opacity));
+  padding: 2.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(224 224 224 / var(--tw-text-opacity));
+  --tw-drop-shadow: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
 }
