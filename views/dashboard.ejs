@@ -1,77 +1,105 @@
 <%- include('partials/header.ejs') %>
 <section class="blueBanner">
+
     <h1>Welcome <%= user.userName %></h1>
+
 </section>
 
-<h2>Grades</h2>
+<section class="dashMain">
 
-<% let subs = ["Math", "Science", "ELA", "Social Studies", "Gym", "Art", "Music", "Foreign Language", "Technology", "Health", "Home Economics", "Elective"] %>
+    <section class="dashGrades">
 
-<ul>
-    <% for(let i = 0; i < subs.length; i++) { %>
-        <% let sub = subs[i] %>
-        <% let total = 0 %>
-        <% let count = 0 %>
-        <% for(let j = 0; j < Assignments.length; j++) { %>
-            <% if(Assignments[j].subject === sub) { %>
-                <% total += Assignments[j].grade %>
-                <% count ++ %>
+        <h2>Grades</h2>
+
+        <% let subs = ["Math", "Science", "ELA", "Social Studies", "Gym", "Art", "Music", "Foreign Language", "Technology", "Health", "Home Economics", "Elective"] %>
+
+        <ul>
+            <% for(let i = 0; i < subs.length; i++) { %>
+                <% let sub = subs[i] %>
+                <% let total = 0 %>
+                <% let count = 0 %>
+                <% for(let j = 0; j < Assignments.length; j++) { %>
+                    <% if(Assignments[j].subject === sub) { %>
+                        <% total += Assignments[j].grade %>
+                        <% count ++ %>
+                    <% } %>
+                <% } %>
+                <% if(count > 0) { %>
+                    <li><%= sub %> <%= total/count %></li>
+                <% } %>
             <% } %>
-        <% } %>
-        <% if(count > 0) { %>
-            <li><%= sub %> <%= total/count %></li>
-        <% } %>
-    <% } %>
-</ul>
+        </ul>
 
-<p>Generate a pdf of current grades in each subject:</p>
-<button>Generate PDF</button>
+        <p>Generate a pdf of current grades in each subject:</p>
 
-<h2>Assignments</h2>
+        <button class="greenBtn">Generate
+            
+        </button>
 
-<ul>
-    <% Assignments.forEach(item => { %>
-        <li>
-            <%= item.subject %>
-            <%= item.assignment %>
-            <%= item.grade %>
-        </li>
-    <% }) %>
-</ul>
+    </section>
 
-<h2>Add New Assignment</h2>
+    <section class="dashList">
 
-<form action="/dashboard" method="POST" >
+        <h2>Assignments</h2>
 
-    <label for="subject">Subject:</label>
-    <select name="subject" id="subject">
-        <option value="starter" selected>Choose a subject:</option>
-        <option>Math</option>
-        <option>Science</option>
-        <option>ELA</option>
-        <option>Social Studies</option>
-        <option>Gym</option>
-        <option>Art</option>
-        <option>Music</option>
-        <option>Foreign Language</option>
-        <option>Technology</option> 
-        <option>Health</option>
-        <option>Home Economics</option>
-        <option>Elective</option>
-    </select>
-    <label for="unit">Unit (optional):</label>
-    <input type="text" name="unit" id="unit" class="inputs">
+        <ul>
 
-    <label for="topic">Topic (optional):</label>
-    <input type="text" name="topic" id="topic" class="inputs">
+            <% Assignments.forEach(item => { %>
+                <li>
+                    <%= item.subject %>
+                    <%= item.assignment %>
+                    <%= item.grade %>
+                </li>
+            <% }) %>
+            
+        </ul>
 
-    <label for="assignment">Assignment:</label>
-    <input type="text" name="assignment" id="assignment" class="inputs">
+    </section>
 
-    <label for="grade">Grade:</label>
-    <input type="number" min= "0" name="grade" id="grade" class="inputs">
-    
-    <button type="submit" class="greenBtn">Submit</button>
-</form>
+    <section class="dashForm">
+
+        <form action="/dashboard" class="addNew" method="POST" >
+                
+            <h2>Add New Assignment</h2>
+
+            <label for="subject">Subject:</label>
+
+            <select name="subject" class="text-brandBlue" id="subject">
+
+                <option value="starter" selected>Choose a subject:</option>
+                <option>Math</option>
+                <option>Science</option>
+                <option>ELA</option>
+                <option>Social Studies</option>
+                <option>Gym</option>
+                <option>Art</option>
+                <option>Music</option>
+                <option>Foreign Language</option>
+                <option>Technology</option> 
+                <option>Health</option>
+                <option>Home Economics</option>
+                <option>Elective</option>
+
+            </select>
+
+            <label for="unit">Unit (optional):</label>
+            <input type="text" name="unit" id="unit" class="inputs">
+
+            <label for="topic">Topic (optional):</label>
+            <input type="text" name="topic" id="topic" class="inputs">
+
+            <label for="assignment">Assignment:</label>
+            <input type="text" name="assignment" id="assignment" class="inputs">
+
+            <label for="grade">Grade:</label>
+            <input type="number" min= "0" name="grade" id="grade" class="inputs">
+            
+            <button type="submit" class="greenBtn">Submit</button>
+
+        </form>
+            
+    </section>
+
+</section>
 
 <%- include('partials/footer.ejs') %>

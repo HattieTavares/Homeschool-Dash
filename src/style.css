@@ -75,3 +75,31 @@
 .form {
     @apply flex flex-col space-y-5 items-center;
 }
+
+.tableSection {
+    @apply flex w-4/5 mx-auto;
+}
+
+table {
+    @apply w-full mt-10;
+}
+
+.dashMain {
+    @apply flex flex-row w-full mt-5;
+}
+
+.dashGrades {
+    @apply flex flex-col p-5 w-1/4 bg-brandBlue text-neutral;
+}
+
+.dashList {
+    @apply flex flex-col p-5 w-1/4;
+}
+
+.dashForm {
+    @apply flex flex-col w-1/2 p-5 bg-brandBlue text-neutral;
+}
+
+.addNew {
+    @apply flex flex-col space-y-2 items-center;
+}
