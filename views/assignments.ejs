@@ -9,7 +9,7 @@
 
 <section class="centering">
 
-    <section class="infoCard">
+    <section class="assignmentCard">
         <ul>
             <table>
                 <thead>
@@ -18,9 +18,9 @@
                         <th>Unit</th>
                         <th>Topic</th>
                         <th>Assignments</th>
-                        <th>Grade</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
+                        <th class="text-right">Grade</th>
+                        <th class="text-right">Edit</th>
+                        <th class="text-right">Delete</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,9 +30,9 @@
                             <td><%= item.unit %></td>
                             <td><%= item.topic %></td>
                             <td><%= item.assignment %></td>
-                            <td class="self-end"><%= item.grade %></td>
-                            <td><a href="/edit/<%=item._id %>" class="edit text-brandGreen"><span class="fas fa-edit"></span></a></td>
-                            <td><a href="/edit/remove/<%=item._id %>"" class="remove text-brandRed"><span class="fas fa-trash"></span></a></td>
+                            <td class="text-right"><%= item.grade %></td>
+                            <td><a href="/edit/<%=item._id %>" class="float-right edit text-brandGreen"><span class="fas fa-edit"></span></a></td>
+                            <td><a href="/edit/remove/<%=item._id %>"" class="float-right remove text-brandRed"><span class="fas fa-trash"></span></a></td>
                         </tr>
                     <% }) %>
                 </tbody>

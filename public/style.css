@@ -722,6 +722,10 @@ select{
   --tw-backdrop-sepia:  ;
 }
 
+.float-right{
+  float: right;
+}
+
 .mt-auto{
   margin-top: auto;
 }
@@ -742,20 +746,20 @@ select{
   align-items: center;
 }
 
-.self-end{
-  align-self: flex-end;
-}
-
-.p-10{
-  padding: 2.5rem;
-}
-
 .pl-3{
   padding-left: 0.75rem;
 }
 
 .text-center{
   text-align: center;
+}
+
+.text-right{
+  text-align: right;
+}
+
+.text-end{
+  text-align: end;
 }
 
 .text-5xl{
@@ -993,6 +997,8 @@ input[type="number"]::-webkit-inner-spin-button,
 .inputs:focus{
   outline: 2px solid transparent;
   outline-offset: 2px;
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(149 157 179 / var(--tw-ring-opacity));
 }
 
 .assignmentInputs{
@@ -1080,7 +1086,7 @@ table{
 .dashGrades{
   margin-left: 2.5rem;
   display: flex;
-  width: 33.333333%;
+  width: 25%;
   flex-direction: column;
   padding: 1.25rem;
   --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
@@ -1092,7 +1098,7 @@ table{
   margin-left: 2.5rem;
   margin-right: 2.5rem;
   display: flex;
-  width: 33.333333%;
+  width: 50%;
   flex-direction: column;
   padding: 1.25rem;
   --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
@@ -1103,7 +1109,7 @@ table{
 .dashForm{
   margin-right: 2.5rem;
   display: flex;
-  width: 33.333333%;
+  width: 25%;
   flex-direction: column;
   padding: 1.25rem;
   --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
@@ -1111,9 +1117,19 @@ table{
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.infoCard{
+.assignmentCard{
   display: flex;
   width: 50%;
+  flex-direction: column;
+  padding: 0.5rem;
+  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.editCard{
+  display: flex;
+  width: 33.333333%;
   flex-direction: column;
   padding: 0.5rem;
   --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);

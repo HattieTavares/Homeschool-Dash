@@ -7,14 +7,13 @@
 </section>
 <section class="centering">
 
-    <section class="infoCard">
+    <section class="editCard">
         <% Assignments.forEach(item => {%>
             <% if (item._id == idAssignments) { %>
-                <form action="/edit/<%= item._id %>" class="form p-10" method="post">
+                <form action="/edit/<%= item._id %>" class="form centering mt-10" method="post">
                     <h2 class="headings">Edit Assignment</h2>
-    
                     <label for="subject" class="leftAlign">Subject:</label>
-        
+    
                     <select name="subject" class="text-brandBlue inputs assignmentInputs" id="subject">
         
                         <option value="starter" selected><%= item.subject %></option>
@@ -38,7 +37,7 @@
         
                     <label for="topic">Topic (optional):</label>
                     <input type="text" name="topic" id="topic" class="inputs assignmentInputs" value="<%= item.topic %>">
-        
+
                     <label for="assignment">Assignment:</label>
                     <input type="text" name="assignment" id="assignment" class="inputs assignmentInputs" value="<%= item.assignment %>">
         
@@ -49,6 +48,7 @@
                         <button type="submit" class="confirm greenBtn">Confirm</button>
                         <a href="/assignments" class="cancel redBtn">Cancel</a>
                     </section>
+
                 </form>
             <% } %>
         <% }) %>

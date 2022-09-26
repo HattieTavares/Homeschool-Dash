@@ -15,7 +15,7 @@
             <thead>
                 <tr>
                     <th>Subject</th>
-                    <th>Average</th>
+                    <th class="text-end">Average</th>
                 </tr>
             </thead>
             <% let subs = ["Math", "Science", "ELA", "Social Studies", "Gym", "Art", "Music", "Foreign Language", "Technology", "Health", "Home Economics", "Elective"] %>
@@ -35,7 +35,7 @@
                     <tbody>
                         <tr>
                             <td><%= sub %></td>
-                            <td class="<%= avg > 89 ? 'gradeA' : avg > 79 ? 'gradeB' : avg > 69 ? 'gradeC' : avg > 59 ? 'gradeD' : 'gradeF' %>"><%= avg %></td>
+                            <td class="text-end"><%= avg %></td>
                         </tr>
                     </tbody>
                 <% } %>
@@ -57,7 +57,7 @@
                     <tr>
                         <th>Subject</th>
                         <th>Assignment</th>
-                        <th>Grade</th>
+                        <th class="text-end">Grade</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -66,7 +66,7 @@
                             <% if(i < 10) {%>
                                     <td><%= Assignments[i].subject %></td>
                                     <td><%= Assignments[i].assignment %></td>
-                                    <td><%= Assignments[i].grade %></td>
+                                    <td class="text-end"><%= Assignments[i].grade %></td>
                             <% } %>
                         </tr>
                     <% } %>
