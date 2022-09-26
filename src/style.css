@@ -77,7 +77,7 @@
 }
 
 .preAuthCard {
-    @apply flex flex-col space-y-3 justify-center items-center p-10 mt-10 bg-brandBlue text-neutral rounded-lg drop-shadow-xl;
+    @apply flex flex-col space-y-3 justify-center items-center p-10 mt-10 shadow-xl;
 }
 
 .form {
