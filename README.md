@@ -2,7 +2,7 @@
 
 A digital dashboard for parents who homeschool that tracks grades by quarter, with parents fully customizing the subjects that are added. Assignment grades are calculated, averaged, and displayed on the dashboard overview.
 
-**Link to project:** Coming soon!
+**Link to project:** https://homeschooldash.cyclic.app/
 
 ![Screenshot of Homeschool Dash Index Page](hdhomepage.png)
 
@@ -12,9 +12,10 @@ A digital dashboard for parents who homeschool that tracks grades by quarter, wi
 
 ## Optimizations
 
-Stretch Goals:
+**Stretch Goals:**
 - Attendance Tracking
 - Weighted grading (depending on market research)
+- Calculate and display GPA
 - Scheduling linked to calendar with reminders
 - Goal Setting per child/Expectations
 - A Curriculum Planner with Yearly/Monthly/Weekly overviews
@@ -23,10 +24,12 @@ Stretch Goals:
 - Ability to save resources for each subject (like a project board to save links for digital resources or projects etc)
 - Ability to generate forms for each child for states where it's required by the district
 - Resource Links (ESPECIALLY FREE ONES)
-SUPER Stretch Goals:
+
+**SUPER Stretch Goals:**
 - Forums to rehome curricula
 - Reviews for individual curricula
 - Ability to upload/save documents to account
 - Resource/Project suggestions by grade/subject
+- Meter based on logo that changes based on the GPA
 
 ## Lessons Learned:

@@ -11,9 +11,17 @@
 
         <h2 class="headings">Grades</h2>
 
-        <% let subs = ["Math", "Science", "ELA", "Social Studies", "Gym", "Art", "Music", "Foreign Language", "Technology", "Health", "Home Economics", "Elective"] %>
+        
 
-        <ul>
+        <table>
+            <thead>
+                <tr>
+                    <th>Subject</th>
+                    <th>Average</th>
+                </tr>
+            </thead>
+            <% let subs = ["Math", "Science", "ELA", "Social Studies", "Gym", "Art", "Music", "Foreign Language", "Technology", "Health", "Home Economics", "Elective"] %>
+            
             <% for(let i = 0; i < subs.length; i++) { %>
                 <% let sub = subs[i] %>
                 <% let total = 0 %>
@@ -25,10 +33,16 @@
                     <% } %>
                 <% } %>
                 <% if(count > 0) { %>
-                    <li><%= sub %> <%= total/count %></li>
+                    <% let avg = total/count %>
+                    <tbody>
+                        <tr>
+                            <td><%= sub %></td>
+                            <td class="<%= avg > 89 ? 'gradeA' : avg > 79 ? 'gradeB' : avg > 69 ? 'gradeC' : avg > 59 ? 'gradeD' : 'gradeF' %>"><%= avg %></td>
+                        </tr>
+                    </tbody>
                 <% } %>
             <% } %>
-        </ul>
+        </table>
 
         <!-- <p>Generate a pdf of current grades in each subject:</p>
 
@@ -40,19 +54,26 @@
 
         <h2 class="headings">Most Recent Assignments</h2>
 
-        <ul>
-
-            <% for(let i = 0; i < Assignments.length; i++) {%>
-                <% if(i < 10) {%>
-                    <li>
-                        <%= Assignments[i].subject %>
-                        <%= Assignments[i].assignment %>
-                        <%= Assignments[i].grade %>
-                    </li>
-                <% } %>
-            <% } %>
-            
-        </ul>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Assignment</th>
+                        <th>Grade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(let i = 0; i < Assignments.length; i++) {%>
+                        <tr>
+                            <% if(i < 10) {%>
+                                    <td><%= Assignments[i].subject %></td>
+                                    <td><%= Assignments[i].assignment %></td>
+                                    <td><%= Assignments[i].grade %></td>
+                            <% } %>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
 
         <a href="/assignments" class="greenBtn">See All</a>
 

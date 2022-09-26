@@ -7,22 +7,39 @@
 
 <a href="/dashboard"><span class="fa-solid fa-arrow-left"></span> Back to Dashboard</a>
 
-<section class="cardSection">
-    <ul>
+<section class="centering">
 
-        <% Assignments.forEach(item => { %>
-            <li>
-                <%= item.subject %>
-                <%= item.unit %>
-                <%= item.topic %>
-                <%= item.assignment %>
-                <%= item.grade %>
-                <a href="/edit/<%=item._id %>" class="edit text-brandGreen"><span class="fas fa-edit"></span></a>
-                <a href="/edit/remove/<%=item._id %>"" class="remove text-brandRed"><span class="fas fa-trash"></span></a>
-            </li>
-        <% }) %>
-        
-    </ul>
+    <section class="infoCard">
+        <ul>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Unit</th>
+                        <th>Topic</th>
+                        <th>Assignments</th>
+                        <th>Grade</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% Assignments.forEach(item => { %>
+                        <tr>
+                            <td><%= item.subject %></td>
+                            <td><%= item.unit %></td>
+                            <td><%= item.topic %></td>
+                            <td><%= item.assignment %></td>
+                            <td><%= item.grade %></td>
+                            <td><a href="/edit/<%=item._id %>" class="edit text-brandGreen"><span class="fas fa-edit"></span></a></td>
+                            <td><a href="/edit/remove/<%=item._id %>"" class="remove text-brandRed"><span class="fas fa-trash"></span></a></td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </ul>
+
+    </section>
 
 </section>
 

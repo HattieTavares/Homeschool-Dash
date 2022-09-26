@@ -21,7 +21,7 @@
 }
 
 .headings {
-    @apply font-logoText;
+    @apply font-logoText self-center;
 }
 
 .logo {
@@ -69,10 +69,10 @@
 }
 
 .assignmentInputs {
-    @apply w-2/3 placeholder-placeholder;
+    @apply w-2/3 placeholder-faint;
 }
 
-.preAuth {
+.centering {
     @apply flex flex-col justify-center items-center;
 }
 
@@ -81,7 +81,11 @@
 }
 
 .form {
-    @apply flex flex-col space-y-2 items-center;
+    @apply flex flex-col space-y-3;
+}
+
+.preAuthForms {
+    @apply items-center;
 }
 
 .tableSection {
@@ -109,9 +113,37 @@ table {
 }
 
 .addNew {
-    @apply flex flex-col space-y-2 items-center;
+    @apply flex flex-col space-y-3 items-center;
 }
 
-.editCard {
-    @apply flex flex-col w-1/3 shadow-xl;
+.infoCard {
+    @apply flex flex-col w-1/2 shadow-xl p-2;
+}
+
+th {
+    @apply text-left;
+}
+
+td {
+    @apply border-t-[1px] border-faint;
+}
+
+gradeA {
+    @apply text-gradesA;
+}
+
+gradeB {
+    @apply text-gradesB;
+}
+
+gradeC {
+    @apply text-gradesC;
+}
+
+gradeD {
+    @apply text-gradesD;
+}
+
+gradeF {
+    @apply text-gradesF;
 }
