@@ -10,7 +10,7 @@
     <section class="infoCard">
         <% Assignments.forEach(item => {%>
             <% if (item._id == idAssignments) { %>
-                <form action="/edit/<%= item._id %>" class="form" method="post">
+                <form action="/edit/<%= item._id %>" class="form p-10" method="post">
                     <h2 class="headings">Edit Assignment</h2>
     
                     <label for="subject" class="leftAlign">Subject:</label>
