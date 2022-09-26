@@ -9,7 +9,7 @@
 
     <section class="dashGrades">
 
-        <h2>Grades</h2>
+        <h2 class="headings">Grades</h2>
 
         <% let subs = ["Math", "Science", "ELA", "Social Studies", "Gym", "Art", "Music", "Foreign Language", "Technology", "Health", "Home Economics", "Elective"] %>
 
@@ -30,29 +30,31 @@
             <% } %>
         </ul>
 
-        <p>Generate a pdf of current grades in each subject:</p>
+        <!-- <p>Generate a pdf of current grades in each subject:</p>
 
-        <button class="greenBtn">Generate
-            
-        </button>
+        <button class="greenBtn">Generate</button> -->
 
     </section>
 
     <section class="dashList">
 
-        <h2>Assignments</h2>
+        <h2 class="headings">Most Recent Assignments</h2>
 
         <ul>
 
-            <% Assignments.forEach(item => { %>
-                <li>
-                    <%= item.subject %>
-                    <%= item.assignment %>
-                    <%= item.grade %>
-                </li>
-            <% }) %>
+            <% for(let i = 0; i < Assignments.length; i++) {%>
+                <% if(i < 10) {%>
+                    <li>
+                        <%= Assignments[i].subject %>
+                        <%= Assignments[i].assignment %>
+                        <%= Assignments[i].grade %>
+                    </li>
+                <% } %>
+            <% } %>
             
         </ul>
+
+        <a href="/assignments" class="greenBtn">See All</a>
 
     </section>
 
@@ -60,11 +62,11 @@
 
         <form action="/dashboard" class="addNew" method="POST" >
                 
-            <h2>Add New Assignment</h2>
+            <h2 class="headings">Add New Assignment</h2>
 
             <label for="subject">Subject:</label>
 
-            <select name="subject" class="text-brandBlue" id="subject">
+            <select name="subject" class="text-brandBlue inputs assignmentInputs" id="subject">
 
                 <option value="starter" selected>Choose a subject:</option>
                 <option>Math</option>
@@ -82,17 +84,13 @@
 
             </select>
 
-            <label for="unit">Unit (optional):</label>
-            <input type="text" name="unit" id="unit" class="inputs">
+            <input type="text" name="unit" id="unit" placeholder="Unit (optional):" class="inputs assignmentInputs">
 
-            <label for="topic">Topic (optional):</label>
-            <input type="text" name="topic" id="topic" class="inputs">
+            <input type="text" name="topic" id="topic" placeholder="Topic (optional):" class="inputs assignmentInputs">
 
-            <label for="assignment">Assignment:</label>
-            <input type="text" name="assignment" id="assignment" class="inputs">
+            <input type="text" name="assignment" id="assignment" placeholder="Assignment:" class="inputs assignmentInputs">
 
-            <label for="grade">Grade:</label>
-            <input type="number" min= "0" name="grade" id="grade" class="inputs">
+            <input type="number" min= "0" name="grade" id="grade" placeholder="Grade:" class="inputs assignmentInputs">
             
             <button type="submit" class="greenBtn">Submit</button>
 

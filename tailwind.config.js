@@ -8,6 +8,7 @@ module.exports = {
         brandYellow: "#FCBF49",
         brandBlue: "#2B3A67",
         brandGreen: "#00916E",
+        placeholder: "#8089a4",
       },
       fontFamily: {
         "mainText": ["Fredoka", "sans-serif"],
@@ -15,5 +16,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 }

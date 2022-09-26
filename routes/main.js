@@ -8,6 +8,7 @@ router.get('/', dashboardController.getIndex)
 router.get("/about", dashboardController.getAbout)
 router.get("/contact", dashboardController.getContact)
 router.get("/resources", dashboardController.getResources)
+router.get("/assignments", dashboardController.getAssignments)
 
 router.get('/login', authController.getLogin)
 router.post('/login', authController.postLogin)

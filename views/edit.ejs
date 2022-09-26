@@ -1,3 +1,56 @@
 <%- include('partials/header.ejs') %>
 
+<section class="blueBanner">
+
+    <h1>Welcome <%= user.userName %></h1>
+
+</section>
+
+<section class="editCard">
+    <% Assignments.forEach(item => {%>
+        <% if (item._id == idAssignments) { %>
+            <form action="/edit/<%= item._id %>" class="form" method="post">
+                <h2 class="headings">Edit Assignment</h2>
+
+                <label for="subject">Subject:</label>
+    
+                <select name="subject" class="text-brandBlue inputs assignmentInputs" id="subject">
+    
+                    <option value="starter" selected><%= item.subject %></option>
+                    <option>Math</option>
+                    <option>Science</option>
+                    <option>ELA</option>
+                    <option>Social Studies</option>
+                    <option>Gym</option>
+                    <option>Art</option>
+                    <option>Music</option>
+                    <option>Foreign Language</option>
+                    <option>Technology</option> 
+                    <option>Health</option>
+                    <option>Home Economics</option>
+                    <option>Elective</option>
+    
+                </select>
+    
+                <label for="unit">Unit (optional):</label>
+                <input type="text" name="unit" id="unit" class="inputs assignmentInputs" value="<%= item.unit %>">
+    
+                <label for="topic">Topic (optional):</label>
+                <input type="text" name="topic" id="topic" class="inputs assignmentInputs" value="<%= item.topic %>">
+    
+                <label for="assignment">Assignment:</label>
+                <input type="text" name="assignment" id="assignment" class="inputs assignmentInputs" value="<%= item.assignment %>">
+    
+                <label for="grade">Grade:</label>
+                <input type="number" min= "0" name="grade" id="grade" class="inputs assignmentInputs" value="<%= item.grade %>">
+
+                <section>
+                    <button type="submit" class="confirm greenBtn">Confirm</button>
+                    <a href="/assignments" class="cancel redBtn">Cancel</a>
+                </section>
+            </form>
+        <% } %>
+    <% }) %>
+</section>
+
 <%- include('partials/footer.ejs') %>

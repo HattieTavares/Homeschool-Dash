@@ -1,16 +1,17 @@
-const Assignments = require("../models/Grades")
+const Assignments = require("../models/Assignment")
 const moment = require("moment")
 const User = require('../models/User')
 
 module.exports = {
     editAssignment : (req, res) => {
         const id = req.params.id
-        Grades.find({}, (err, grades) => {
+        Assignments.find({}, (err, assignments) => {
             res.render("edit.ejs", {
-                Assignments: grades, 
-                idGrades: id,
+                Assignments: assignments, 
+                idAssignments: id,
                 moment: moment,
-                user: req.user
+                user: req.user,
+                page: "edit",
             })
         })
     },
@@ -18,7 +19,7 @@ module.exports = {
         const id = req.params.id
         Assignments.findByIdAndRemove(id, err => {
             if (err) return res.status(500).send(err)
-            res.redirect("/dashboard")
+            res.redirect("/assignments")
         })
     },
     updateAssignment : (req, res) => {
@@ -26,13 +27,15 @@ module.exports = {
         Assignments.findByIdAndUpdate(id,
             {
                 assignment: req.body.assignment,
+                unit: req.body.unit,
+                topic: req.body.topic,
                 grade: req.body.grade,
                 subject: req.body.subject,
                 userId: req.user.id
             },
             err => {
                 if (err) return res.status(500).send(err)
-                res.redirect("/dashboard")
+                res.redirect("/assignments")
             })
     }
 }

@@ -1,4 +1,4 @@
-const Assignments = require("../models/Grades")
+const Assignments = require("../models/Assignment")
 const moment = require('moment')
 const User = require('../models/User')
 
@@ -29,9 +29,9 @@ module.exports = {
     },
     getDashboard : async (req, res) => {
         try {
-            const grades = await Assignments.find({userId:req.user.id})
+            const assignments = await Assignments.find({userId:req.user.id})
             res.render("dashboard.ejs", {
-                Assignments: grades,
+                Assignments: assignments,
                 moment: moment,
                 user: req.user,
                 page: "dashboard",
@@ -44,6 +44,8 @@ module.exports = {
         const assignment = new Assignments(
             {
                 assignment: req.body.assignment,
+                unit: req.body.unit,
+                topic: req.body.topic,
                 grade: req.body.grade,
                 subject: req.body.subject,
                 userId: req.user.id,
@@ -56,5 +58,18 @@ module.exports = {
             if (err) return res.status(500).send(err)
             res.redirect("/dashboard")
         }
-    }
+    },
+    getAssignments : async (req, res) => {
+        try {
+            const assignments = await Assignments.find({userId:req.user.id})
+            res.render("assignments.ejs", {
+                Assignments: assignments,
+                moment: moment,
+                user: req.user,
+                page: "assignments",
+            })
+        } catch (err) {
+            if (err) return res.status(500).send(err.toString())
+        }
+    },
 }

@@ -1,0 +1,29 @@
+<%- include('partials/header.ejs') %>
+<section class="blueBanner">
+
+    <h1>Welcome <%= user.userName %></h1>
+
+</section>
+
+<a href="/dashboard"><span class="fa-solid fa-arrow-left"></span> Back to Dashboard</a>
+
+<section class="cardSection">
+    <ul>
+
+        <% Assignments.forEach(item => { %>
+            <li>
+                <%= item.subject %>
+                <%= item.unit %>
+                <%= item.topic %>
+                <%= item.assignment %>
+                <%= item.grade %>
+                <a href="/edit/<%=item._id %>" class="edit text-brandGreen"><span class="fas fa-edit"></span></a>
+                <a href="/edit/remove/<%=item._id %>"" class="remove text-brandRed"><span class="fas fa-trash"></span></a>
+            </li>
+        <% }) %>
+        
+    </ul>
+
+</section>
+
+<%- include('partials/footer.ejs') %>

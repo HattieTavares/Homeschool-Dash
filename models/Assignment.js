@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-const gradesSchema = new mongoose.Schema( {
+const assignmentSchema = new mongoose.Schema( {
     date: {
         type: Date,
         default: Date.now
@@ -28,4 +28,4 @@ const gradesSchema = new mongoose.Schema( {
     },
 })
 
-module.exports = mongoose.model("Grades", gradesSchema, "grades")
+module.exports = mongoose.model("Assignment", assignmentSchema, "assignment")
