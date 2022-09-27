@@ -4,7 +4,7 @@
   "description": "an tracking app for parents who homeschool",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "nodemon server.js",
     "build-css": "tailwindcss -i src/style.css -o public/style.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -33,7 +33,7 @@
     "mongodb": "^4.9.1",
     "mongoose": "^6.5.4",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.19",
+    "nodemon": "^2.0.20",
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
     "validator": "^13.7.0"

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/style.css">
     <script src="https://kit.fontawesome.com/68de1d0260.js" crossorigin="anonymous"></script>
     <title>Homeschool Dash</title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico" />
 </head>
 <body class="basics">
 
@@ -19,22 +19,27 @@
         <section class="flex items-center">
             <a href="/"><img src="/images/HDLogo.png" class="logo" alt="homeschool dash logo"></a>
 
-            <a href="/"><h1 class="display-inline text-5xl font-medium pl-3">Homeschool Dash</h1></a>
+            <a href="/"><h1 class="display-inline text-5xl font-medium pl-3 shrink whitespace-nowrap">Homeschool Dash</h1></a>
         </section>
         
         <nav>
-            <a href="/about" class="navLink">About</a>
-            <a href="/contact" class="navLink">Contact</a>
-            <a href="/resources" class="navLink">Resources</a>
-            <% if(typeof user === 'undefined') { %>
-                <a href="/login" class="yellowBtn">Log In</a>
-            <% } else { %>
-                <% if(page === "dashboard") { %>
-                    <a href="/logout" class="redBtn">Log Out</a>
+            <div class="burgercursor-pointer lg:hidden">
+                <span class="fa-solid fa-bars text-3xl"></span>
+            </div>
+            <section class="menu hidden lg:block">
+                <a href="/about" class="navLink">About</a>
+                <a href="/contact" class="navLink">Contact</a>
+                <a href="/resources" class="navLink">Resources</a>
+                <% if(typeof user === 'undefined') { %>
+                    <a href="/login" class="yellowBtn">Log In</a>
                 <% } else { %>
-                    <a href="/dashboard" class="navLink">Dashboard</a>
-                    <a href="/logout" class="redBtn">Log Out</a>
+                    <% if(page === "dashboard") { %>
+                        <a href="/logout" class="redBtn">Log Out</a>
+                    <% } else { %>
+                        <a href="/dashboard" class="navLink">Dashboard</a>
+                        <a href="/logout" class="redBtn">Log Out</a>
+                    <% } %>
                 <% } %>
-            <% } %>
+            </section>
         </nav>
     </header>

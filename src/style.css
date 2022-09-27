@@ -15,7 +15,7 @@
 /* main styles */
 
 .basics {
-    @apply bg-neutral text-brandBlue font-mainText flex flex-col p-2 h-screen;
+    @apply bg-neutral text-brandBlue font-mainText flex flex-col p-2 h-screen min-w-full;
 }
 
 .header {
@@ -27,7 +27,7 @@
 }
 
 .logo {
-    @apply w-24 h-auto mb-3;
+    @apply w-24 h-auto mb-3 shrink;
 }
 
 .navLink {
@@ -35,7 +35,7 @@
 }
 
 .blueBanner {
-    @apply bg-brandBlue text-neutral flex h-16 text-2xl font-logoText font-semibold justify-center items-center drop-shadow-lg shadow-brandBlue;
+    @apply bg-brandBlue text-neutral flex h-16 text-2xl font-logoText font-semibold justify-center items-center drop-shadow-lg shadow-brandBlue shrink;
 }
 
 .centering {
@@ -43,7 +43,7 @@
 }
 
 .card {
-    @apply flex flex-row mt-16 pl-20 pr-20;
+    @apply flex flex-col lg:flex-row mt-16 pl-20 pr-20;
 }
 
 .footer {
@@ -67,7 +67,7 @@
 /* other styles */
 
 .cardSection {
-    @apply flex flex-col text-justify w-1/2 h-auto space-y-5 justify-center items-center;
+    @apply flex flex-col text-justify mt-0 mb-10 lg:w-1/2 h-auto space-y-5 justify-center items-center;
 }
 
 .imgHorizontal {
@@ -75,7 +75,7 @@
 }
 
 .preAuthCard {
-    @apply flex flex-col space-y-3 justify-center items-center p-10 mt-10 shadow-xl;
+    @apply flex flex-col space-y-3 justify-center items-center p-10 mt-10 shadow-md lg:shadow-xl;
 }
 
 .tableSection {
@@ -83,27 +83,27 @@
 }
 
 .dashMain {
-    @apply flex flex-row justify-around w-full mt-5;
+    @apply flex flex-col justify-center items-center lg:flex-row lg:justify-around w-full mt-5;
 }
 
 .dashGrades {
-    @apply flex flex-col p-5 w-1/4 shadow-xl ml-10;
+    @apply flex flex-col shadow-md p-5 w-2/3 lg:w-1/4 lg:shadow-xl lg:ml-10;
 }
 
 .dashList {
-    @apply flex flex-col shadow-xl p-5 w-1/2 ml-10 mr-10;
+    @apply flex flex-col shadow-md p-5 w-2/3 lg:shadow-xl lg:w-1/2 lg:ml-10 lg:mr-10;
 }
 
 .dashForm {
-    @apply flex flex-col w-1/4 p-5 shadow-xl mr-10;
+    @apply flex flex-col p-5 w-2/3 shadow-md lg:w-1/4 lg:shadow-xl lg:mr-10;
 }
 
 .assignmentCard {
-    @apply flex flex-col w-1/2 shadow-xl p-2;
+    @apply flex flex-col p-2 shadow-md w-full lg:w-2/3 lg:shadow-xl;
 }
 
 .editCard {
-    @apply flex flex-col w-1/3 shadow-xl p-2;
+    @apply flex flex-col p-2 w-full shadow-md lg:w-1/2 xl:w-1/3 lg:shadow-xl;
 }
 
 /* forms */

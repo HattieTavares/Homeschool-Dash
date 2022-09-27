@@ -741,6 +741,14 @@ select{
   margin-right: 0.5rem;
 }
 
+.ml-5{
+  margin-left: 1.25rem;
+}
+
+.mt-5{
+  margin-top: 1.25rem;
+}
+
 .mt-3{
   margin-top: 0.75rem;
 }
@@ -777,12 +785,12 @@ select{
   display: table;
 }
 
-.h-40{
-  height: 10rem;
+.hidden{
+  display: none;
 }
 
-.w-1\/2{
-  width: 50%;
+.h-40{
+  height: 10rem;
 }
 
 .w-full{
@@ -793,12 +801,20 @@ select{
   max-width: 42rem;
 }
 
+.shrink{
+  flex-shrink: 1;
+}
+
 .items-center{
   align-items: center;
 }
 
 .justify-center{
   justify-content: center;
+}
+
+.whitespace-nowrap{
+  white-space: nowrap;
 }
 
 .rounded-md{
@@ -850,6 +866,11 @@ select{
   text-align: end;
 }
 
+.text-lg{
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
 .text-sm{
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -858,6 +879,11 @@ select{
 .text-5xl{
   font-size: 3rem;
   line-height: 1;
+}
+
+.text-3xl{
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .font-medium{
@@ -906,6 +932,7 @@ input[type="number"]::-webkit-inner-spin-button,
 .basics{
   display: flex;
   height: 100vh;
+  min-width: 100%;
   flex-direction: column;
   --tw-bg-opacity: 1;
   background-color: rgb(224 224 224 / var(--tw-bg-opacity));
@@ -937,6 +964,7 @@ input[type="number"]::-webkit-inner-spin-button,
   margin-bottom: 0.75rem;
   height: auto;
   width: 6rem;
+  flex-shrink: 1;
 }
 
 .navLink{
@@ -954,6 +982,7 @@ input[type="number"]::-webkit-inner-spin-button,
 .blueBanner{
   display: flex;
   height: 4rem;
+  flex-shrink: 1;
   align-items: center;
   justify-content: center;
   --tw-bg-opacity: 1;
@@ -980,9 +1009,15 @@ input[type="number"]::-webkit-inner-spin-button,
 .card{
   margin-top: 4rem;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding-left: 5rem;
   padding-right: 5rem;
+}
+
+@media (min-width: 1024px){
+  .card{
+    flex-direction: row;
+  }
 }
 
 .footer{
@@ -1077,9 +1112,10 @@ input[type="number"]::-webkit-inner-spin-button,
 /* other styles */
 
 .cardSection{
+  margin-top: 0px;
+  margin-bottom: 2.5rem;
   display: flex;
   height: auto;
-  width: 50%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -1093,6 +1129,12 @@ input[type="number"]::-webkit-inner-spin-button,
 
 .cardSection{
   text-align: justify;
+}
+
+@media (min-width: 1024px){
+  .cardSection{
+    width: 50%;
+  }
 }
 
 .imgHorizontal{
@@ -1120,9 +1162,17 @@ input[type="number"]::-webkit-inner-spin-button,
 
 .preAuthCard{
   padding: 2.5rem;
-  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+@media (min-width: 1024px){
+  .preAuthCard{
+    --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
 }
 
 .tableSection{
@@ -1136,62 +1186,121 @@ input[type="number"]::-webkit-inner-spin-button,
   margin-top: 1.25rem;
   display: flex;
   width: 100%;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 1024px){
+  .dashMain{
+    flex-direction: row;
+    justify-content: space-around;
+  }
 }
 
 .dashGrades{
-  margin-left: 2.5rem;
   display: flex;
-  width: 25%;
+  width: 66.666667%;
   flex-direction: column;
   padding: 1.25rem;
-  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+@media (min-width: 1024px){
+  .dashGrades{
+    margin-left: 2.5rem;
+    width: 25%;
+    --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
 }
 
 .dashList{
-  margin-left: 2.5rem;
-  margin-right: 2.5rem;
   display: flex;
-  width: 50%;
+  width: 66.666667%;
   flex-direction: column;
   padding: 1.25rem;
-  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+@media (min-width: 1024px){
+  .dashList{
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+    width: 50%;
+    --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+}
+
 .dashForm{
-  margin-right: 2.5rem;
   display: flex;
-  width: 25%;
+  width: 66.666667%;
   flex-direction: column;
   padding: 1.25rem;
-  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+@media (min-width: 1024px){
+  .dashForm{
+    margin-right: 2.5rem;
+    width: 25%;
+    --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
 }
 
 .assignmentCard{
   display: flex;
-  width: 50%;
+  width: 100%;
   flex-direction: column;
   padding: 0.5rem;
-  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+@media (min-width: 1024px){
+  .assignmentCard{
+    width: 66.666667%;
+    --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
 }
 
 .editCard{
   display: flex;
-  width: 33.333333%;
+  width: 100%;
   flex-direction: column;
   padding: 0.5rem;
-  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+@media (min-width: 1024px){
+  .editCard{
+    width: 50%;
+    --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+}
+
+@media (min-width: 1280px){
+  .editCard{
+    width: 33.333333%;
+  }
 }
 
 /* forms */
@@ -1336,5 +1445,19 @@ gradeF{
 
   .md\:flex{
     display: flex;
+  }
+}
+
+@media (min-width: 1024px){
+  .lg\:block{
+    display: block;
+  }
+
+  .lg\:hidden{
+    display: none;
+  }
+
+  .lg\:w-1\/2{
+    width: 50%;
   }
 }
