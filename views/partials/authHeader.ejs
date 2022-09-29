@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/style.css">
     <script src="https://kit.fontawesome.com/68de1d0260.js" crossorigin="anonymous"></script>
     <title>Homeschool Dash</title>
-    <link rel="icon" type="image/x-icon" href="../../favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon-32x32.png" />
 </head>
 <body class="basics">
 
@@ -18,12 +18,17 @@
         <section class="flex items-center">
             <a href="/"><img src="/images/HDLogo.png" class="logo" alt="homeschool dash logo"></a>
 
-            <a href="/"><h1 class="text-5xl font-medium pl-3">Homeschool Dash</h1>
+            <a href="/"><h1>Homeschool Dash</h1>
         </section></a>
         
         <nav>
-            <a href="/about" class="navLink">About</a>
-            <a href="/contact" class="navLink">Contact</a>
-            <a href="/resources" class="navLink">Resources</a>
+            <div id="burger" class="cursor-pointer lg:hidden">
+                <span class="fa-solid fa-bars text-3xl mr-3"></span>
+            </div>
+            <section id="menu" class="hidden lg:block">
+                <a href="/about" class="block navLink lg:inline">About</a>
+                <a href="/contact" class="block navLink lg:inline">Contact</a>
+                <a href="/resources" class="block navLink lg:inline">Resources</a>
+            </section>
         </nav>
     </header>

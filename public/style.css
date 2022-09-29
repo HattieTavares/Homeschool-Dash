@@ -472,7 +472,6 @@ select{
   background-size: 1.5em 1.5em;
   padding-right: 2.5rem;
   -webkit-print-color-adjust: exact;
-     color-adjust: exact;
           print-color-adjust: exact;
 }
 
@@ -483,7 +482,6 @@ select{
   background-size: initial;
   padding-right: 0.75rem;
   -webkit-print-color-adjust: unset;
-     color-adjust: unset;
           print-color-adjust: unset;
 }
 
@@ -493,7 +491,6 @@ select{
           appearance: none;
   padding: 0;
   -webkit-print-color-adjust: exact;
-     color-adjust: exact;
           print-color-adjust: exact;
   display: inline-block;
   vertical-align: middle;
@@ -582,53 +579,6 @@ select{
 }
 
 *, ::before, ::after{
-  --tw-border-spacing-x: 0;
-  --tw-border-spacing-y: 0;
-  --tw-translate-x: 0;
-  --tw-translate-y: 0;
-  --tw-rotate: 0;
-  --tw-skew-x: 0;
-  --tw-skew-y: 0;
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  --tw-pan-x:  ;
-  --tw-pan-y:  ;
-  --tw-pinch-zoom:  ;
-  --tw-scroll-snap-strictness: proximity;
-  --tw-ordinal:  ;
-  --tw-slashed-zero:  ;
-  --tw-numeric-figure:  ;
-  --tw-numeric-spacing:  ;
-  --tw-numeric-fraction:  ;
-  --tw-ring-inset:  ;
-  --tw-ring-offset-width: 0px;
-  --tw-ring-offset-color: #fff;
-  --tw-ring-color: rgb(59 130 246 / 0.5);
-  --tw-ring-offset-shadow: 0 0 #0000;
-  --tw-ring-shadow: 0 0 #0000;
-  --tw-shadow: 0 0 #0000;
-  --tw-shadow-colored: 0 0 #0000;
-  --tw-blur:  ;
-  --tw-brightness:  ;
-  --tw-contrast:  ;
-  --tw-grayscale:  ;
-  --tw-hue-rotate:  ;
-  --tw-invert:  ;
-  --tw-saturate:  ;
-  --tw-sepia:  ;
-  --tw-drop-shadow:  ;
-  --tw-backdrop-blur:  ;
-  --tw-backdrop-brightness:  ;
-  --tw-backdrop-contrast:  ;
-  --tw-backdrop-grayscale:  ;
-  --tw-backdrop-hue-rotate:  ;
-  --tw-backdrop-invert:  ;
-  --tw-backdrop-opacity:  ;
-  --tw-backdrop-saturate:  ;
-  --tw-backdrop-sepia:  ;
-}
-
-::-webkit-backdrop{
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
@@ -773,6 +723,10 @@ select{
   margin-top: 2.5rem;
 }
 
+.mr-3{
+  margin-right: 0.75rem;
+}
+
 .block{
   display: block;
 }
@@ -805,16 +759,16 @@ select{
   flex-shrink: 1;
 }
 
+.cursor-pointer{
+  cursor: pointer;
+}
+
 .items-center{
   align-items: center;
 }
 
 .justify-center{
   justify-content: center;
-}
-
-.whitespace-nowrap{
-  white-space: nowrap;
 }
 
 .rounded-md{
@@ -850,10 +804,6 @@ select{
   padding-bottom: 0.5rem;
 }
 
-.pl-3{
-  padding-left: 0.75rem;
-}
-
 .text-center{
   text-align: center;
 }
@@ -874,11 +824,6 @@ select{
 .text-sm{
   font-size: 0.875rem;
   line-height: 1.25rem;
-}
-
-.text-5xl{
-  font-size: 3rem;
-  line-height: 1;
 }
 
 .text-3xl{
@@ -911,8 +856,7 @@ select{
 }
 
 .underline{
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
+  text-decoration-line: underline;
 }
 
 .shadow-xl{
@@ -932,7 +876,9 @@ input[type="number"]::-webkit-inner-spin-button,
 .basics{
   display: flex;
   height: 100vh;
+  width: 100vw;
   min-width: 100%;
+  flex-shrink: 1;
   flex-direction: column;
   --tw-bg-opacity: 1;
   background-color: rgb(224 224 224 / var(--tw-bg-opacity));
@@ -950,6 +896,22 @@ input[type="number"]::-webkit-inner-spin-button,
   justify-content: space-between;
   padding: 0.5rem;
   font-family: Montserrat, sans-serif;
+}
+
+h1{
+  display: inline;
+  white-space: nowrap;
+  padding-left: 0.75rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 500;
+}
+
+@media (min-width: 1024px){
+  h1{
+    font-size: 3rem;
+    line-height: 1;
+  }
 }
 
 .headings{
@@ -975,8 +937,7 @@ input[type="number"]::-webkit-inner-spin-button,
 }
 
 .navLink:hover{
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
+  text-decoration-line: underline;
 }
 
 .blueBanner{
@@ -1001,6 +962,7 @@ input[type="number"]::-webkit-inner-spin-button,
 
 .centering{
   display: flex;
+  flex-shrink: 1;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -1009,6 +971,7 @@ input[type="number"]::-webkit-inner-spin-button,
 .card{
   margin-top: 4rem;
   display: flex;
+  flex-shrink: 1;
   flex-direction: column;
   padding-left: 5rem;
   padding-right: 5rem;
@@ -1024,6 +987,7 @@ input[type="number"]::-webkit-inner-spin-button,
   margin-top: auto;
   display: flex;
   width: 100%;
+  flex-shrink: 1;
   justify-content: center;
   align-self: flex-end;
   padding-bottom: 1.25rem;
@@ -1116,6 +1080,7 @@ input[type="number"]::-webkit-inner-spin-button,
   margin-bottom: 2.5rem;
   display: flex;
   height: auto;
+  flex-shrink: 1;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -1140,6 +1105,7 @@ input[type="number"]::-webkit-inner-spin-button,
 .imgHorizontal{
   height: auto;
   width: 80%;
+  flex-shrink: 1;
   border-radius: 0.375rem;
   border-width: 2px;
   --tw-border-opacity: 1;
@@ -1149,6 +1115,7 @@ input[type="number"]::-webkit-inner-spin-button,
 .preAuthCard{
   margin-top: 2.5rem;
   display: flex;
+  flex-shrink: 1;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -1180,12 +1147,14 @@ input[type="number"]::-webkit-inner-spin-button,
   margin-right: auto;
   display: flex;
   width: 80%;
+  flex-shrink: 1;
 }
 
 .dashMain{
   margin-top: 1.25rem;
   display: flex;
   width: 100%;
+  flex-shrink: 1;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -1200,7 +1169,8 @@ input[type="number"]::-webkit-inner-spin-button,
 
 .dashGrades{
   display: flex;
-  width: 66.666667%;
+  width: 100%;
+  flex-shrink: 1;
   flex-direction: column;
   padding: 1.25rem;
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -1220,7 +1190,8 @@ input[type="number"]::-webkit-inner-spin-button,
 
 .dashList{
   display: flex;
-  width: 66.666667%;
+  width: 100%;
+  flex-shrink: 1;
   flex-direction: column;
   padding: 1.25rem;
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -1241,7 +1212,8 @@ input[type="number"]::-webkit-inner-spin-button,
 
 .dashForm{
   display: flex;
-  width: 66.666667%;
+  width: 100%;
+  flex-shrink: 1;
   flex-direction: column;
   padding: 1.25rem;
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -1262,6 +1234,7 @@ input[type="number"]::-webkit-inner-spin-button,
 .assignmentCard{
   display: flex;
   width: 100%;
+  flex-shrink: 1;
   flex-direction: column;
   padding: 0.5rem;
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -1307,6 +1280,7 @@ input[type="number"]::-webkit-inner-spin-button,
 
 .form{
   display: flex;
+  flex-shrink: 1;
   flex-direction: column;
 }
 
@@ -1451,6 +1425,10 @@ gradeF{
 @media (min-width: 1024px){
   .lg\:block{
     display: block;
+  }
+
+  .lg\:inline{
+    display: inline;
   }
 
   .lg\:hidden{

@@ -15,11 +15,15 @@
 /* main styles */
 
 .basics {
-    @apply bg-neutral text-brandBlue font-mainText flex flex-col p-2 h-screen min-w-full;
+    @apply bg-neutral text-brandBlue font-mainText flex flex-col p-2 h-screen w-screen shrink min-w-full;
 }
 
 .header {
     @apply w-full flex flex-row justify-between font-logoText items-center p-2;
+}
+
+h1 {
+    @apply inline text-3xl lg:text-5xl font-medium pl-3 whitespace-nowrap;
 }
 
 .headings {
@@ -39,15 +43,15 @@
 }
 
 .centering {
-    @apply flex flex-col justify-center items-center;
+    @apply flex flex-col justify-center shrink items-center;
 }
 
 .card {
-    @apply flex flex-col lg:flex-row mt-16 pl-20 pr-20;
+    @apply flex flex-col shrink lg:flex-row mt-16 pl-20 pr-20;
 }
 
 .footer {
-    @apply w-full flex justify-center self-end mt-auto pb-5;
+    @apply w-full flex shrink justify-center self-end mt-auto pb-5;
 }
 
 /* buttons */
@@ -67,39 +71,39 @@
 /* other styles */
 
 .cardSection {
-    @apply flex flex-col text-justify mt-0 mb-10 lg:w-1/2 h-auto space-y-5 justify-center items-center;
+    @apply flex flex-col shrink text-justify mt-0 mb-10 lg:w-1/2 h-auto space-y-5 justify-center items-center;
 }
 
 .imgHorizontal {
-    @apply w-4/5 h-auto rounded-md border-2 border-brandBlue;
+    @apply w-4/5 shrink h-auto rounded-md border-2 border-brandBlue;
 }
 
 .preAuthCard {
-    @apply flex flex-col space-y-3 justify-center items-center p-10 mt-10 shadow-md lg:shadow-xl;
+    @apply flex flex-col shrink space-y-3 justify-center items-center p-10 mt-10 shadow-md lg:shadow-xl;
 }
 
 .tableSection {
-    @apply flex w-4/5 mx-auto;
+    @apply flex shrink w-4/5 mx-auto;
 }
 
 .dashMain {
-    @apply flex flex-col justify-center items-center lg:flex-row lg:justify-around w-full mt-5;
+    @apply flex flex-col shrink justify-center items-center lg:flex-row lg:justify-around w-full mt-5;
 }
 
 .dashGrades {
-    @apply flex flex-col shadow-md p-5 w-2/3 lg:w-1/4 lg:shadow-xl lg:ml-10;
+    @apply flex flex-col shrink shadow-md p-5 w-full lg:w-1/4 lg:shadow-xl lg:ml-10;
 }
 
 .dashList {
-    @apply flex flex-col shadow-md p-5 w-2/3 lg:shadow-xl lg:w-1/2 lg:ml-10 lg:mr-10;
+    @apply flex flex-col shrink shadow-md p-5 w-full lg:shadow-xl lg:w-1/2 lg:ml-10 lg:mr-10;
 }
 
 .dashForm {
-    @apply flex flex-col p-5 w-2/3 shadow-md lg:w-1/4 lg:shadow-xl lg:mr-10;
+    @apply flex flex-col shrink p-5 w-full shadow-md lg:w-1/4 lg:shadow-xl lg:mr-10;
 }
 
 .assignmentCard {
-    @apply flex flex-col p-2 shadow-md w-full lg:w-2/3 lg:shadow-xl;
+    @apply flex flex-col shrink p-2 shadow-md w-full lg:w-2/3 lg:shadow-xl;
 }
 
 .editCard {
@@ -109,7 +113,7 @@
 /* forms */
 
 .form {
-    @apply flex flex-col space-y-2;
+    @apply flex flex-col shrink space-y-2;
 }
 
 .preAuthForms {
