@@ -15,7 +15,7 @@
 /* main styles */
 
 .basics {
-    @apply bg-neutral text-brandBlue font-mainText flex flex-col p-2 h-screen w-screen shrink min-w-full;
+    @apply bg-neutral text-brandBlue font-mainText flex flex-col z-auto p-2 h-screen w-screen shrink min-w-fit;
 }
 
 .header {
@@ -23,7 +23,7 @@
 }
 
 h1 {
-    @apply inline text-3xl lg:text-5xl font-medium pl-3 whitespace-nowrap;
+    @apply text-5xl font-medium pl-3 whitespace-nowrap;
 }
 
 .headings {
@@ -31,7 +31,7 @@ h1 {
 }
 
 .logo {
-    @apply w-24 h-auto mb-3 shrink;
+    @apply w-24 h-auto mb-3;
 }
 
 .navLink {
@@ -39,7 +39,7 @@ h1 {
 }
 
 .blueBanner {
-    @apply bg-brandBlue text-neutral flex h-16 text-2xl font-logoText font-semibold justify-center items-center drop-shadow-lg shadow-brandBlue shrink;
+    @apply bg-brandBlue text-neutral flex h-16 text-2xl font-logoText font-semibold justify-center items-center drop-shadow-lg shadow-brandBlue shrink-0;
 }
 
 .centering {
@@ -47,7 +47,7 @@ h1 {
 }
 
 .card {
-    @apply flex flex-col shrink lg:flex-row mt-16 pl-20 pr-20;
+    @apply flex flex-col shrink mt-16 lg:flex-row pl-20 pr-20;
 }
 
 .footer {
@@ -71,11 +71,11 @@ h1 {
 /* other styles */
 
 .cardSection {
-    @apply flex flex-col shrink text-justify mt-0 mb-10 lg:w-1/2 h-auto space-y-5 justify-center items-center;
+    @apply flex flex-col text-justify mt-0 mb-10 w-full lg:w-1/2 h-auto space-y-5 justify-center items-center;
 }
 
 .imgHorizontal {
-    @apply w-4/5 shrink h-auto rounded-md border-2 border-brandBlue;
+    @apply w-4/5 h-auto rounded-md border-2 border-brandBlue;
 }
 
 .preAuthCard {

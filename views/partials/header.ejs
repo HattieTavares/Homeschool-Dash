@@ -16,17 +16,15 @@
 <body class="basics">
 
     <header class="header">
-        <section class="flex shrink items-center">
+        <section class="flex items-center">
             <a href="/"><img src="/images/HDLogo.png" class="logo" alt="homeschool dash logo"></a>
 
             <a href="/"><h1>Homeschool Dash</h1></a>
         </section>
         
         <nav>
-            <div id="burger" class="cursor-pointer lg:hidden">
-                <span class="fa-solid fa-bars text-3xl mr-3"></span>
-            </div>
-            <section id="menu" class="hidden lg:block">
+            
+            <section class="hidden lg:block">
                 <a href="/about" class="navLink">About</a>
                 <a href="/contact" class="navLink">Contact</a>
                 <a href="/resources" class="navLink">Resources</a>
@@ -41,5 +39,30 @@
                     <% } %>
                 <% } %>
             </section>
+
+            <!-- Mobile Navigation -->
+
+            <div id="burger" class="cursor-pointer lg:hidden">
+                <span class="fa-solid fa-bars text-3xl ml-2 mr-2"></span>
+            </div>
+
+            <div id="menu" class="hidden lg:hidden absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-brandBlue shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                <div class="py-1" role="none">
+                    <a href="/about" class="text-neutral block px-4 py-2 text-sm hover:bg-brandGreen" role="menuitem" tabindex="-1" id="menu-item-0">About</a>
+                    <a href="/contact" class="text-neutral block px-4 py-2 text-sm hover:bg-brandGreen" role="menuitem" tabindex="-1" id="menu-item-1">Contact</a>
+                    <a href="/resources" class="text-neutral block px-4 py-2 text-sm hover:bg-brandGreen" role="menuitem" tabindex="-1" id="menu-item-2">Resources</a>
+                    <% if(typeof user === 'undefined') { %>
+                        <a href="/login" class="text-neutral block px-4 py-2 text-sm hover:bg-brandGreen">Log In</a>
+                    <% } else { %>
+                        <% if(page === "dashboard") { %>
+                            <a href="/logout" class="text-neutral block px-4 py-2 text-sm hover:bg-brandGreen">Log Out</a>
+                        <% } else { %>
+                            <a href="/dashboard" class="text-neutral block px-4 py-2 text-sm hover:bg-brandGreen">Dashboard</a>
+                            <a href="/logout" class="text-neutral block px-4 py-2 text-sm hover:bg-brandGreen">Log Out</a>
+                        <% } %>
+                    <% } %>
+                </div>
+              </div>
+
         </nav>
     </header>
