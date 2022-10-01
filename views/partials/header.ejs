@@ -16,7 +16,7 @@
 <body class="basics">
 
     <header class="header">
-        <section class="flex shrink items-center">
+        <section class="flex shrink-0 items-center">
             <a href="/"><img src="/images/HDLogo.png" class="logo" alt="homeschool dash logo"></a>
 
             <a href="/"><h1>Homeschool Dash</h1></a>
@@ -24,14 +24,13 @@
         
         <nav>
 
-            <div id="burger" class="cursor-pointer">
-                <span onclick="toggleSlideover()" class="fa-solid fa-bars text-3xl ml-2 mr-2"></span>
-            </div>
-
             <div class="flex items-center justify-center">
-                <div id="slideover-container" class="z-50 w-full h-full fixed inset-0 invisible">
-                  <div onclick="toggleSlideover()" id="slideover-bg" class="w-full h-full duration-500 ease-out transition-all inset-0 absolute bg-brandBlue opacity-0"></div>
-                  <div onclick="toggleSlideover()" id="slideover" class="w-96 bg-brandBlue p-5 h-full absolute right-0 duration-300 ease-out transition-all translate-x-full">
+                <div class="cursor-pointer">
+                    <span onclick="toggleSlideover()" class="fa-solid fa-bars text-3xl ml-2 mr-2"></span>
+                </div>
+                <div id="slideover-container" class="z-10 w-full h-full fixed inset-0 invisible">
+                  <div onclick="toggleSlideover()" id="slideover-bg" class="z-20 w-full h-full duration-500 ease-out transition-all inset-0 absolute bg-brandBlue opacity-0"></div>
+                  <div onclick="toggleSlideover()" id="slideover" class="z-30 w-64 lg:w-80 bg-brandBlue p-5 h-full absolute right-0 duration-300 ease-out transition-all translate-x-full">
                       <div class="absolute cursor-pointer text-neutral top-0 w-8 h-8 flex items-center justify-center right-0 mt-5 mr-5">
                           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                       </div>

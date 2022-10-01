@@ -87,7 +87,7 @@ h1 {
 }
 
 .dashMain {
-    @apply flex flex-col shrink justify-center items-center lg:flex-row lg:justify-around w-full mt-5;
+    @apply flex flex-col shrink justify-center lg:flex-row lg:justify-around w-full mt-5;
 }
 
 .dashGrades {
