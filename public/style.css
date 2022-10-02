@@ -738,6 +738,14 @@ select{
   margin-top: 1.25rem;
 }
 
+.mr-5{
+  margin-right: 1.25rem;
+}
+
+.mr-3{
+  margin-right: 0.75rem;
+}
+
 .mt-3{
   margin-top: 0.75rem;
 }
@@ -768,10 +776,6 @@ select{
 
 .mr-2{
   margin-right: 0.5rem;
-}
-
-.mr-5{
-  margin-right: 1.25rem;
 }
 
 .block{
@@ -835,12 +839,30 @@ select{
   cursor: pointer;
 }
 
+.flex-row{
+  flex-direction: row;
+}
+
+.flex-col{
+  flex-direction: column;
+}
+
 .items-center{
   align-items: center;
 }
 
+.justify-end{
+  justify-content: flex-end;
+}
+
 .justify-center{
   justify-content: center;
+}
+
+.space-y-2 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
 }
 
 .rounded-md{
@@ -910,6 +932,10 @@ select{
 .text-3xl{
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+
+.font-semibold{
+  font-weight: 600;
 }
 
 .font-medium{
@@ -1052,6 +1078,7 @@ h1{
   z-index: -10;
   display: flex;
   height: 4rem;
+  width: 100%;
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
@@ -1342,20 +1369,38 @@ h1{
   }
 }
 
+.assignmentList{
+  width: 66.666667%;
+}
+
+@media (min-width: 1024px){
+  .assignmentList{
+    display: none;
+  }
+}
+
 .assignmentCard{
+  margin-bottom: 1.25rem;
   display: flex;
   width: 100%;
-  flex-shrink: 1;
   flex-direction: column;
-  padding: 0.5rem;
+  padding: 1.25rem;
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.assignmentTable{
+  display: none;
+}
+
 @media (min-width: 1024px){
-  .assignmentCard{
+  .assignmentTable{
+    display: flex;
     width: 66.666667%;
+    flex-shrink: 1;
+    flex-direction: column;
+    padding: 0.5rem;
     --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
     --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -1449,31 +1494,6 @@ td{
   border-top-width: 1px;
   --tw-border-opacity: 1;
   border-color: rgb(149 157 179 / var(--tw-border-opacity));
-}
-
-gradeA{
-  --tw-text-opacity: 1;
-  color: rgb(2 182 8 / var(--tw-text-opacity));
-}
-
-gradeB{
-  --tw-text-opacity: 1;
-  color: rgb(143 209 0 / var(--tw-text-opacity));
-}
-
-gradeC{
-  --tw-text-opacity: 1;
-  color: rgb(255 233 32 / var(--tw-text-opacity));
-}
-
-gradeD{
-  --tw-text-opacity: 1;
-  color: rgb(255 133 3 / var(--tw-text-opacity));
-}
-
-gradeF{
-  --tw-text-opacity: 1;
-  color: rgb(252 1 1 / var(--tw-text-opacity));
 }
 
 .focus\:border-blue-400:focus{

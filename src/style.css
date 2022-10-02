@@ -39,7 +39,7 @@ h1 {
 }
 
 .blueBanner {
-    @apply -z-10 bg-brandBlue text-neutral flex h-16 text-2xl font-logoText font-semibold justify-center items-center drop-shadow-lg shadow-brandBlue shrink-0;
+    @apply -z-10 bg-brandBlue text-neutral w-full flex h-16 text-2xl font-logoText font-semibold justify-center items-center drop-shadow-lg shadow-brandBlue shrink-0;
 }
 
 .centering {
@@ -102,8 +102,16 @@ h1 {
     @apply flex flex-col shrink p-5 w-full shadow-md lg:w-1/4 lg:shadow-lg lg:mr-10;
 }
 
+.assignmentList {
+    @apply lg:hidden w-2/3;
+}
+
 .assignmentCard {
-    @apply flex flex-col shrink p-2 shadow-md w-full lg:w-2/3 lg:shadow-lg;
+    @apply flex flex-col p-5 mb-5 w-full shadow-md;
+}
+
+.assignmentTable {
+    @apply hidden lg:flex lg:flex-col lg:shrink lg:p-2 lg:w-2/3 lg:shadow-lg;
 }
 
 .editCard {
@@ -140,24 +148,4 @@ th {
 
 td {
     @apply border-t-[1px] border-faint;
-}
-
-gradeA {
-    @apply text-gradesA;
-}
-
-gradeB {
-    @apply text-gradesB;
-}
-
-gradeC {
-    @apply text-gradesC;
-}
-
-gradeD {
-    @apply text-gradesD;
-}
-
-gradeF {
-    @apply text-gradesF;
 }

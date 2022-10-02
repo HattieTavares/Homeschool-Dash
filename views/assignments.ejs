@@ -5,42 +5,58 @@
 
 </section>
 
-<a href="/dashboard" class="ml-5 mt-5 text-lg"><span class="fa-solid fa-arrow-left"></span> Back to Dashboard</a>
+<a href="/dashboard" class="ml-5 mt-5 text-lg"><span class="fa-solid fa-arrow-left mr-5"></span>Back to Dashboard</a>
 
 <section class="centering">
     
     <h2 class="headings">All Assignments</h2>
 
-    <section class="assignmentCard">
+    <ul class="assignmentList">
+        <% Assignments.forEach(item => { %>
+            <li class="assignmentCard">
+                <section class="flex flex-col w-full space-y-2">
+                    <p><span class="font-semibold">Subject: </span><%= item.subject %></p>
+                    <p><span class="font-semibold">Unit: </span><%= item.unit %></p>
+                    <p><span class="font-semibold">Topic: </span><%= item.topic %></p>
+                    <p><span class="font-semibold">Assignment: </span><%= item.assignment %></p>
+                    <p><span class="font-semibold">Grade: </span><%= item.grade %></p>
+                </section>
+                <section class="flex flex-row w-full justify-end">
+                    <p><a href="/edit/<%=item._id %>" class="edit text-brandGreen mr-3"><span class="fas fa-edit"></span></a></p>
+                    <p><a href="/edit/remove/<%=item._id %>"" class="remove text-brandRed"><span class="fas fa-trash"></span></a></p>
+                </section>
+            </li>
+        <% }) %>
+    </ul>
+
+    <section class="assignmentTable">
         
-        <ul>
-            <table>
-                <thead>
+        <table>
+            <thead>
+                <tr>
+                    <th>Subject</th>
+                    <th>Unit</th>
+                    <th>Topic</th>
+                    <th>Assignments</th>
+                    <th class="text-right">Grade</th>
+                    <th class="text-right">Edit</th>
+                    <th class="text-right">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% Assignments.forEach(item => { %>
                     <tr>
-                        <th>Subject</th>
-                        <th>Unit</th>
-                        <th>Topic</th>
-                        <th>Assignments</th>
-                        <th class="text-right">Grade</th>
-                        <th class="text-right">Edit</th>
-                        <th class="text-right">Delete</th>
+                        <td><%= item.subject %></td>
+                        <td><%= item.unit %></td>
+                        <td><%= item.topic %></td>
+                        <td><%= item.assignment %></td>
+                        <td class="text-right"><%= item.grade %></td>
+                        <td><a href="/edit/<%=item._id %>" class="float-right edit text-brandGreen"><span class="fas fa-edit"></span></a></td>
+                        <td><a href="/edit/remove/<%=item._id %>"" class="float-right remove text-brandRed"><span class="fas fa-trash"></span></a></td>
                     </tr>
-                </thead>
-                <tbody>
-                    <% Assignments.forEach(item => { %>
-                        <tr>
-                            <td><%= item.subject %></td>
-                            <td><%= item.unit %></td>
-                            <td><%= item.topic %></td>
-                            <td><%= item.assignment %></td>
-                            <td class="text-right"><%= item.grade %></td>
-                            <td><a href="/edit/<%=item._id %>" class="float-right edit text-brandGreen"><span class="fas fa-edit"></span></a></td>
-                            <td><a href="/edit/remove/<%=item._id %>"" class="float-right remove text-brandRed"><span class="fas fa-trash"></span></a></td>
-                        </tr>
-                    <% }) %>
-                </tbody>
-            </table>
-        </ul>
+                <% }) %>
+            </tbody>
+        </table>
 
     </section>
 
