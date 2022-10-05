@@ -1,14 +1,14 @@
 # Homeschool-Dash
 
-A digital dashboard for homeschooling caretakers that tracks grades, users can fully customize the subjects that are added. Assignment grades are calculated, averaged, and displayed on the dashboard overview.
+A digital dashboard for homeschooling caretakers that tracks grades. Users can fully customize the subjects that are added. Assignment grades are calculated, averaged, and displayed on the dashboard overview. Individual assignments can be edited or deleted.
 
 **Link to project:** https://homeschooldash.cyclic.app/
 
-![Screenshot of Homeschool Dash Index Page](hdhomepage.png)
+![Gif Of Homeschool Dash site](hdPromo.gif)
 
 ## How It's Made:
 
-**Tech used:** HTML, CSS, TailwindCSS, EJS, JavaScript, Node.js, Express, MongoDB, and Passport for Authentication
+**Tech used:** HTML, CSS, TailwindCSS, EJS, JavaScript, Node.js, Express, MongoDB, Passport for Authentication, and Nodemailer for emails
 
 ## Optimizations
 
