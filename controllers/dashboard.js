@@ -25,10 +25,8 @@ module.exports = {
     },
     postContact: async (req, res, next) => {
         const { yourname, youremail, yourmessage } = req.body;
-        console.log(req.body)
         try {
           await mainMail(yourname, youremail, yourmessage);
-          
           res.send("Message sent successfully!");
         } catch (error) {
           res.send("Message could not be sent.");

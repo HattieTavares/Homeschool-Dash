@@ -16,19 +16,21 @@ module.exports = {
         });
 
         let mailOption = {
-            from: email,
+            from: process.env.MAIL_USERNAME,
             to: process.env.MAIL_USERNAME,
             subject: "Homeschool Dash Contact Form Request",
-            name: name,
-            email: email,
-            text: message,
+            html: `You've got a message from: 
+            Name: ${name}
+            Email : ${email}
+            Message: ${message}`,
         };
-        
-        try {
-            await transporter.sendMail(mailOption);
-            return Promise.resolve("Message Sent Successfully!");
-        } catch (error) {
-            return Promise.reject(error);
-        }
+
+        transporter.sendMail(mailOption, function(err, data) {
+            if (err) {
+              console.log("Error " + err);
+            } else {
+              console.log("Email sent successfully");
+            }
+          });
     }
 }
