@@ -1,4 +1,6 @@
 // Nodemailer
+const nodemailer = require("nodemailer")
+
 module.exports = {
     mainMail: async function(name, email, message) {
         let transporter = await nodemailer.createTransport({
@@ -14,14 +16,14 @@ module.exports = {
         });
 
         let mailOption = {
-            from: process.env.MAIL_USERNAME,
+            from: email,
             to: process.env.MAIL_USERNAME,
-            html : `You have a message from 
-            Name: ${name}
-            Email: ${email}
-            Message: ${message}`,
+            subject: "Homeschool Dash Contact Form Request",
+            name: name,
+            email: email,
+            text: message,
         };
-
+        
         try {
             await transporter.sendMail(mailOption);
             return Promise.resolve("Message Sent Successfully!");

@@ -1,6 +1,8 @@
 const Assignments = require("../models/Assignment")
 const moment = require('moment')
 const User = require('../models/User')
+const nodemailer = require("nodemailer")
+const { mainMail } = require("../middleware/mailer")
 
 module.exports = {
     getIndex: (req,res)=>{
