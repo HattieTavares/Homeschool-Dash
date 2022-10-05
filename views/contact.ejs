@@ -10,31 +10,31 @@
         Questions, comments, concerns? Get in touch:
     </p>
 
-    <div class="mt-6">
+    <form action="/contact" method="POST" class="mt-6">
         <div class="items-center -mx-2 md:flex">
             <div class="w-full mx-2">
                 <label class="block mb-2 text-sm font-medium">Name</label>
 
-                <input class="block w-full px-4 py-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" type="text">
+                <input class="block w-full px-4 py-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" type="text" name="yourname" required>
             </div>
 
             <div class="w-full mx-2 mt-4 md:mt-0">
                 <label class="block mb-2 text-sm font-medium">E-mail</label>
 
-                <input class="block w-full px-4 py-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" type="email">
+                <input class="block w-full px-4 py-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" type="email" name="youremail" required>
             </div>
         </div>
 
         <div class="w-full mt-4">
             <label class="block mb-2 text-sm font-medium">Message</label>
 
-            <textarea class="block w-full h-40 px-4 py-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40"></textarea>
+            <textarea class="block w-full h-40 px-4 py-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" name="yourmessage" required></textarea>
         </div>
 
         <div class="flex justify-center mt-6">
-            <button class="greenBtn">Send</button>
+            <button class="greenBtn" type="submit" value="send">Send</button>
         </div>
-    </div>
+    </form>
 </section>
 
 <%- include('partials/footer.ejs') %>

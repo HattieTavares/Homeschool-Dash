@@ -1,6 +1,6 @@
 # Homeschool-Dash
 
-A digital dashboard for parents who homeschool that tracks grades by quarter, with parents fully customizing the subjects that are added. Assignment grades are calculated, averaged, and displayed on the dashboard overview.
+A digital dashboard for homeschooling caretakers that tracks grades, users can fully customize the subjects that are added. Assignment grades are calculated, averaged, and displayed on the dashboard overview.
 
 **Link to project:** https://homeschooldash.cyclic.app/
 
