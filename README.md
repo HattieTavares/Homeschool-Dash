@@ -4,7 +4,7 @@ A digital dashboard for homeschooling caretakers that tracks grades. Users can f
 
 **Link to project:** https://homeschooldash.cyclic.app/
 
-![Gif Of Homeschool Dash site](hdPromo.gif)
+![Promo Of Homeschool Dash site](hdPromo.mp4)
 
 ## How It's Made:
 
