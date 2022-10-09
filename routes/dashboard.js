@@ -3,12 +3,12 @@
 
 const express = require("express")
 const router = express.Router()
-const dashboardController = require("../controllers/dashboard")
+const mainController = require("../controllers/main")
 const { ensureAuth } = require("../middleware/auth")
 
 //add specific routes for specific tasks
-router.get("/", ensureAuth, dashboardController.getDashboard)
-router.post("/", dashboardController.addAssignment)
+router.get("/", ensureAuth, mainController.getDashboard)
+router.post("/", mainController.addAssignment)
 
 
 module.exports = router

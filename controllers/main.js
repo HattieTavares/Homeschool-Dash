@@ -1,5 +1,6 @@
 const Assignments = require("../models/Assignment")
 const moment = require('moment')
+const State = require("../models/State")
 const User = require('../models/User')
 const nodemailer = require("nodemailer")
 const { mainMail } = require("../middleware/mailer")
@@ -32,11 +33,30 @@ module.exports = {
           res.send("Message could not be sent.");
         }
     },
-    getResources: (req,res)=>{
-        res.render('resources.ejs', {
-            user: req.user,
-            page: "resources"
-        })
+    getResources: async (req,res)=>{
+        try {
+            const states = await State.find({})
+            console.log(states)
+            res.render('resources.ejs', {
+                user: req.user,
+                States: states,
+                page: "resources"
+            })
+        } catch (err) {
+            if (err) return res.status(500).send(err.toString())
+        } 
+    },
+    getState: async (req,res)=>{
+        try {
+            const state = await State.findById(stateId);
+            res.render('resources.ejs', {
+                user: req.user,
+                State: state,
+                page: "resources"
+            })
+        } catch (err) {
+            if (err) return res.status(500).send(err.toString())
+        } 
     },
     getDashboard : async (req, res) => {
         try {

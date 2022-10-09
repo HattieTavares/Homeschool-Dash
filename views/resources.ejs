@@ -3,71 +3,17 @@
 <section class="blueBanner">
     <h2>Resources</h2>
 </section>
-<h1 class="text-center mt-10 headings">Coming Soon!</h1>
-<!-- <section class="tableSection">
-    <table>
-        <caption>Click on your state to learn more about regulations.</caption>
-        <tr>
-            <td><a href="#">Alabama</a></td>
-            <td><a href="#">Colorado</a></td>
-            <td><a href="#">Hawaii</a></td>
-            <td><a href="#">Kansas</a></td>
-            <td><a href="#">Massachusetts</a></td>
-            <td><a href="#">Montana</a></td>
-            <td><a href="#">New Mexico</a></td>
-            <td><a href="#">Oklahoma</a></td>
-            <td><a href="#">South Dakota</a></td>
-            <td><a href="#">Virginia</a></td>
-        </tr>
-        <tr>
-            <td><a href="#">Alaska</a></td>
-            <td><a href="#">Connecticut</a></td>
-            <td><a href="#">Idaho</a></td>
-            <td><a href="#">Kentucky</a></td>
-            <td><a href="#">Michigan</a></td>
-            <td><a href="#">Nebraska</a></td>
-            <td><a href="#">New York</a></td>
-            <td><a href="#">Oregon</a></td>
-            <td><a href="#">Tennessee</a></td>
-            <td><a href="#">Washington</a></td>
-        </tr>
-        <tr>
-            <td><a href="#">Arizona</a></td>
-            <td><a href="#">Delaware</a></td>
-            <td><a href="#">Illinois</a></td>
-            <td><a href="#">Louisiana</a></td>
-            <td><a href="#">Minnesota</a></td>
-            <td><a href="#">Nevada</a></td>
-            <td><a href="#">North Carolina</a></td>
-            <td><a href="#">Pennsylvania</a></td>
-            <td><a href="#">Texas</a></td>
-            <td><a href="#">West Virginia</a></td>
-        </tr>
-        <tr>
-            <td><a href="#">Arkansas</a></td>
-            <td><a href="#">Florida</a></td>
-            <td><a href="#">Indiana</a></td>
-            <td><a href="#">Maine</a></td>
-            <td><a href="#">Mississippi</a></td>
-            <td><a href="#">New Hampshire</a></td>
-            <td><a href="#">North Dakota</a></td>
-            <td><a href="#">Rhode Island</a></td>
-            <td><a href="#">Utah</a></td>
-            <td><a href="#">Wisconsin</a></td>
-        </tr>
-        <tr>
-            <td><a href="#">California</a></td>
-            <td><a href="#">Georgia</a></td>
-            <td><a href="#">Iowa</a></td>
-            <td><a href="#">Maryland</a></td>
-            <td><a href="#">Missouri</a></td>
-            <td><a href="#">New Jersey</a></td>
-            <td><a href="#">Ohio</a></td>
-            <td><a href="#">South Carolina</a></td>
-            <td><a href="#">Vermont</a></td>
-            <td><a href="#">Wyoming</a></td>
-        </tr>
-    </table>
-</section> -->
+<!-- <h1 class="text-center mt-10 headings">Coming Soon!</h1> -->
+<section class="stateOptions">
+    <span>States</span>
+    <select name="states" id="states">
+        <option value="starter" selected>Choose a state:</option>
+        <% States.forEach(item => { %>
+            <option data-id='<%= item._id %>'><%= item.state %></option>
+        <% }) %>
+    </select>
+
+    <p id="stateName"></p>
+</section>
 
 <%- include('partials/footer.ejs') %>
