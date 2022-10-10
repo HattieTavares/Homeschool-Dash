@@ -36,7 +36,6 @@ module.exports = {
     getResources: async (req,res)=>{
         try {
             const states = await State.find({})
-            console.log(states)
             res.render('resources.ejs', {
                 user: req.user,
                 States: states,
@@ -48,12 +47,9 @@ module.exports = {
     },
     getState: async (req,res)=>{
         try {
+            const { stateId } = req.params
             const state = await State.findById(stateId);
-            res.render('resources.ejs', {
-                user: req.user,
-                State: state,
-                page: "resources"
-            })
+            res.json(state)
         } catch (err) {
             if (err) return res.status(500).send(err.toString())
         } 

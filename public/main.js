@@ -5,16 +5,32 @@ function toggleSlideover(){
   document.getElementById('slideover').classList.toggle('translate-x-full');
 }
 
-const selectState = document.getElementById("states")
+const selection = document.getElementById("stateSelection")
+let value = selection.options[selection.selectedIndex]
+let btn = document.getElementById("btn")
 
-selectState.addEventListener("click", event => {
-  console.log("clicked")
-  let stateId = selectState.getAttribute("data-id")
-  fetch(`/resources/${stateId}`)
-  .then((response) => response.json())
-  .then((data) => 
-
-  console.log(data));
-
-  document.getElementById("stateName").innerText = data.state
-})
+btn.onclick = async(event) => {
+  let data = await fetch(`/resources/${selection.value}`)
+  console.log(data)
+  let jsonData = await data.json()
+  let stateText = document.getElementById("stateName")
+  stateText.innerText = jsonData.state
+  let notifyText = document.getElementById("notify")
+  notifyText.innerText = jsonData.notify
+  let withdrawalText = document.getElementById("withdrawal")
+  withdrawalText.innerText = jsonData.withdrawal
+  let instructorText = document.getElementById("instructor")
+  instructorText.innerText = jsonData.instructor
+  let daysText = document.getElementById("days")
+  daysText.innerText = jsonData.days
+  let attendanceText = document.getElementById("attendance")
+  attendanceText.innerText = jsonData.attendance
+  let gradesText = document.getElementById("grades")
+  gradesText.innerText = jsonData.grades
+  let immunizationsText = document.getElementById("immunizations")
+  immunizationsText.innerText = jsonData.immunizations
+  let testingText = document.getElementById("testing")
+  testingText.innerText = jsonData.testing
+  let subjectsText = document.getElementById("subjects")
+  subjectsText.innerText = jsonData.subjects
+}

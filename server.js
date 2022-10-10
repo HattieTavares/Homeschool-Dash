@@ -13,6 +13,7 @@ const connectDB = require("./config/database")
 const mainRoutes = require("./routes/main")
 const dashboardRoutes = require("./routes/dashboard")
 const editRoutes = require("./routes/edit")
+const methodOverride = require("method-override")
 require("dotenv").config({ path: "./config/.env"})
 
 // Passport
@@ -27,6 +28,7 @@ app.use('/images', express.static('images'));
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 app.use(logger("dev"))
+app.use(methodOverride('_method'))
 
 // Sessions
 app.use(

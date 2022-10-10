@@ -5,39 +5,39 @@ const stateSchema = new mongoose.Schema( {
         required: true
     },
     notify: {
-        type: Boolean,
+        type: String,
         required: true
     },
     withdrawal: {
-        type: Boolean,
+        type: String,
         required: true
     },
     instructor: {
-        type: Boolean,
+        type: String,
         required: true
     },
     days: {
-        type: Boolean,
+        type: String,
         required: true
     },
     attendance: {
-        type: Boolean,
+        type: String,
         required: true
     },
     grades: {
-        type: Boolean,
+        type: String,
         required: true
     },
     immunizations: {
-        type: Boolean,
+        type: String,
         required: true
     },
     testing: {
-        type: Boolean,
+        type: String,
         required: true
     },
     subjects: {
-        type: Boolean,
+        type: String,
         required: true
     },
 })

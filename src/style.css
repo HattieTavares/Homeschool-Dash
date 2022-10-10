@@ -110,7 +110,7 @@ h1 {
     @apply flex flex-col p-5 mb-5 w-full shadow-md;
 }
 
-.assignmentTable {
+.largeTable {
     @apply hidden lg:flex lg:flex-col lg:shrink lg:p-2 lg:w-2/3 lg:shadow-lg;
 }
 

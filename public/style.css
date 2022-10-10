@@ -1390,12 +1390,12 @@ h1{
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.assignmentTable{
+.largeTable{
   display: none;
 }
 
 @media (min-width: 1024px){
-  .assignmentTable{
+  .largeTable{
     display: flex;
     width: 66.666667%;
     flex-shrink: 1;

@@ -10,7 +10,7 @@ router.get("/about", mainController.getAbout)
 router.get("/contact", mainController.getContact)
 router.post("/contact", mainController.postContact)
 router.get("/resources", mainController.getResources)
-router.route("resources/stateId", mainController.getState)
+router.get("/resources/:stateId", mainController.getState)
 router.get("/assignments", mainController.getAssignments)
 
 router.get('/login', authController.getLogin)

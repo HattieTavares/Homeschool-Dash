@@ -3,17 +3,59 @@
 <section class="blueBanner">
     <h2>Resources</h2>
 </section>
-<!-- <h1 class="text-center mt-10 headings">Coming Soon!</h1> -->
-<section class="stateOptions">
-    <span>States</span>
-    <select name="states" id="states">
-        <option value="starter" selected>Choose a state:</option>
-        <% States.forEach(item => { %>
-            <option data-id='<%= item._id %>'><%= item.state %></option>
-        <% }) %>
-    </select>
 
-    <p id="stateName"></p>
+<section class="centering">
+
+    <h1 class="text-center mt-10 headings">State Requirements</h1>
+    <p>Select a state to see the basic homeschooling requirements for each.</p>
+    <section class="stateOptions">
+        <select name="states" id="stateSelection">
+            <option value="starter" selected>Choose a state:</option>
+            <% States.forEach(item => { %>
+                <option value='<%= item._id %>'><%= item.state %></option>
+            <% }) %>
+        </select>
+        <button id="btn" class="greenBtn">Submit</button>
+    </section>
+    <section class="largeTable">
+        <table>
+            <thead>
+                <tr>
+                    <th id="stateName" class="text-center"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Required to notify the district?</td><td id="notify" class="text-center"></td>
+                </tr>
+                <tr>
+                    <td>Required to officially withdraw your child?</td><td id="withdrawal" class="text-center"></td>
+                </tr>
+                <tr>
+                    <td>Restrictions for instructors?</td><td id="instructor" class="text-center"></td>
+                </tr>
+                <tr>
+                    <td>Specific number of days to be homeschooled?</td><td id="days" class="text-center"></td>
+                </tr>
+                <tr>
+                    <td>Required to track/submit attendance?</td><td id="attendance" class="text-center"></td>
+                </tr>
+                <tr>
+                    <td>Required to track/submit grades?</td><td id="grades" class="text-center"></td>
+                </tr>
+                <tr>
+                    <td>Requires immunization records?</td><td id="immunizations" class="text-center"></td>
+                </tr>
+                <tr>
+                    <td>Requires testing?</td><td id="testing" class="text-center"></td>
+                </tr>
+                <tr>
+                    <td>Requires specific subjects?</td><td id="subjects" class="text-center"></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
 </section>
 
 <%- include('partials/footer.ejs') %>
