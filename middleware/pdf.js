@@ -13,6 +13,10 @@ module.exports = {
 
         doc.end();
 
+        const a = document.createElement("a");
+        document.body.appendChild(a);
+        a.style = "display: none";
+
         let blob;
 
         function download() {
