@@ -33,4 +33,9 @@ btn.onclick = async(event) => {
   testingText.innerText = jsonData.testing
   let subjectsText = document.getElementById("subjects")
   subjectsText.innerText = jsonData.subjects
+  let aboutText = document.getElementById("aboutLink")
+  aboutText.innerText = "A link to the state's department of education section on homeschooling:"
+  let linkText = document.getElementById("link")
+  linkText.innerText = jsonData.link
+  linkText.href = jsonData.link
 }

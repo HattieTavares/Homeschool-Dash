@@ -5,55 +5,71 @@
 </section>
 
 <section class="centering">
+    
+    <section class="flex flex-row w-4/5">
+        
+        <section class="flex flex-col w-1/3 space-y-3 text-left">
 
-    <h1 class="text-center mt-10 headings">State Requirements</h1>
-    <p>Select a state to see the basic homeschooling requirements for each.</p>
-    <section class="stateOptions">
-        <select name="states" id="stateSelection">
-            <option value="starter" selected>Choose a state:</option>
-            <% States.forEach(item => { %>
-                <option value='<%= item._id %>'><%= item.state %></option>
-            <% }) %>
-        </select>
-        <button id="btn" class="greenBtn">Submit</button>
+            <h1 class="mt-10 headings">State Requirements</h1>
+            <p>Select a state to see the basic homeschooling requirements for each.</p>
+
+            <section class="stateOptions text-left">
+                <select name="states" id="stateSelection">
+                    <option value="starter" selected>Choose a state:</option>
+                    <% States.forEach(item => { %>
+                        <option value='<%= item._id %>'><%= item.state %></option>
+                    <% }) %>
+                </select>
+                <button id="btn" class="greenBtn">Submit</button>
+            </section>
+
+        </section>
+
+        
+        <section class="w-1/3 tableSection pl-10">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="text-left headings">State: <span id="stateName"></span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Required to notify the district?</td><td id="notify" class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td>Required to officially withdraw your child?</td><td id="withdrawal" class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td>Restrictions for instructors?</td><td id="instructor" class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td>Specific number of days to be homeschooled?</td><td id="days" class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td>Required to track/submit attendance?</td><td id="attendance" class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td>Required to track/submit grades?</td><td id="grades" class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td>Requires immunization records?</td><td id="immunizations" class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td>Requires testing?</td><td id="testing" class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td>Requires specific subjects?</td><td id="subjects" class="text-center"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
     </section>
-    <section class="largeTable">
-        <table>
-            <thead>
-                <tr>
-                    <th id="stateName" class="text-center"></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Required to notify the district?</td><td id="notify" class="text-center"></td>
-                </tr>
-                <tr>
-                    <td>Required to officially withdraw your child?</td><td id="withdrawal" class="text-center"></td>
-                </tr>
-                <tr>
-                    <td>Restrictions for instructors?</td><td id="instructor" class="text-center"></td>
-                </tr>
-                <tr>
-                    <td>Specific number of days to be homeschooled?</td><td id="days" class="text-center"></td>
-                </tr>
-                <tr>
-                    <td>Required to track/submit attendance?</td><td id="attendance" class="text-center"></td>
-                </tr>
-                <tr>
-                    <td>Required to track/submit grades?</td><td id="grades" class="text-center"></td>
-                </tr>
-                <tr>
-                    <td>Requires immunization records?</td><td id="immunizations" class="text-center"></td>
-                </tr>
-                <tr>
-                    <td>Requires testing?</td><td id="testing" class="text-center"></td>
-                </tr>
-                <tr>
-                    <td>Requires specific subjects?</td><td id="subjects" class="text-center"></td>
-                </tr>
-            </tbody>
-        </table>
+
+    <section class="w-4/5 text-left">
+        <p id="aboutLink"></p>
+        <a href="#" id="link" class="hover:text-brandGreen hover:underline"></a>
     </section>
 
 </section>
