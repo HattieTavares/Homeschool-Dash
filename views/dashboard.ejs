@@ -44,7 +44,12 @@
 
         <p class="text-left mb-2 mt-0">Generate a pdf of the current grades in each subject:</p>
 
-        <a href="/dashboard/pdf" class="greenBtn">PDF</a>
+        <details>
+            <summary class="greenBtn self-center">PDF</summary>
+
+            <button class="greenBtn self-center" onclick="downloadPDF()">Download</button>
+            <iframe id="pdf" width="100%"></iframe>
+        </details>
 
     </section>
 
