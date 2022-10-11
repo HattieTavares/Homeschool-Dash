@@ -139,7 +139,7 @@ h1 {
 /* table styling */
 
 table {
-    @apply w-full mt-10 mb-10;
+    @apply w-full mt-10 mb-5;
 }
 
 th {

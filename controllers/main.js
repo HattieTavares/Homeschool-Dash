@@ -4,6 +4,7 @@ const State = require("../models/State")
 const User = require('../models/User')
 const nodemailer = require("nodemailer")
 const { mainMail } = require("../middleware/mailer")
+const { generatePdf } = require("../middleware/pdf")
 
 module.exports = {
     getIndex: (req,res)=>{
@@ -86,7 +87,7 @@ module.exports = {
             res.redirect("/dashboard")
         }
     },
-    getAssignments : async (req, res) => {
+    getAssignments: async (req, res) => {
         try {
             const assignments = await Assignments.find({userId:req.user.id})
             res.render("assignments.ejs", {
@@ -97,6 +98,16 @@ module.exports = {
             })
         } catch (err) {
             if (err) return res.status(500).send(err.toString())
+        }
+    },
+    getPdf: async(req, res) => {
+        try {
+            await generatePdf()
+            console.log("pdf generated")
+            res.redirect("/dashboard")
+        } catch(err) {
+            if (err) return res.status(500).send(err)
+            res.redirect("/dashboard")
         }
     },
 }
