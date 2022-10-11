@@ -100,14 +100,18 @@ module.exports = {
             if (err) return res.status(500).send(err.toString())
         }
     },
-    getPdf: async(req, res) => {
+    getPdf: async (req, res) => {
         try {
             await generatePdf()
-            console.log("pdf generated")
-            res.redirect("/dashboard")
-        } catch(err) {
-            if (err) return res.status(500).send(err)
-            res.redirect("/dashboard")
+            const assignments = await Assignments.find({userId:req.user.id})
+            res.render("pdf.ejs", {
+                Assignments: assignments,
+                moment: moment,
+                user: req.user,
+                page: "pdf",
+            })
+        } catch (err) {
+            if (err) return res.status(500).send(err.toString())
         }
     },
 }
