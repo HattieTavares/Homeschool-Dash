@@ -1,6 +1,5 @@
 const express = require("express")
 const app = express()
-const PORT = 1337
 const mongoose = require("mongoose")
 const passport = require("passport")
 const session = require("express-session")
@@ -18,8 +17,6 @@ require("dotenv").config({ path: "./config/.env"})
 
 // Passport
 require("./config/passport")(passport)
-
-connectDB()
 
 // Set Middleware
 app.set("view engine", "ejs")
@@ -51,4 +48,9 @@ app.use("/", mainRoutes)
 app.use("/dashboard", dashboardRoutes)
 app.use("/edit", editRoutes)
 
-app.listen(process.env.PORT || PORT, ()=> console.log(`Server is running on port ${PORT}`))
+//Connect to DB before listening
+connectDB().then(() => {
+    app.listen(process.env.PORT, ()=> {
+        console.log(`Server is running on port ${process.env.PORT}`)
+    })
+})
