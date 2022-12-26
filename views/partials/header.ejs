@@ -39,7 +39,8 @@
                         <a href="/contact" class="navLink">Contact</a>
                         <a href="/resources" class="navLink">Resources</a>
                         <% if(typeof user === 'undefined') { %>
-                            <a href="/login" class="yellowBtn">Log In</a>
+                            <a href="/login" class="yellowBtn mb-5">Log In</a>
+                            <span class="block"><a href="/signup" class="yellowBtn">Sign Up</a></span>
                         <% } else { %>
                             <% if(page === "dashboard") { %>
                                 <a href="/logout" class="redBtn">Log Out</a>
