@@ -13,7 +13,7 @@
         <section class="flex flex-row stateOptions items-center">
             <select name="states" id="stateSelection">
                 <option value="starter" selected>Choose a state:</option>
-                <% States.forEach(item => { %>
+                <% States.sort().forEach(item => { %>
                     <option value='<%= item._id %>'><%= item.state %></option>
                 <% }) %>
             </select>
